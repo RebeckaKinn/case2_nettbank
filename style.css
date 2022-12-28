@@ -1,0 +1,7 @@
+body{
+    background-color: #d8c690b0;
+    font-family: 'calibri';
+}
+.container{
+    display: grid;
+}
