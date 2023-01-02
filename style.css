@@ -1,6 +1,6 @@
 body{
     background-color: #fcfad4;
-    font-family: 'calibri';
+    font-family: Century Gothic;
 }
 .container{
     display: grid;
@@ -16,47 +16,53 @@ body{
 }
 .icon{
     grid-area: ikon;
-    background-color: #2199ea;
 }
 
 .titleBar{
     grid-area: headline;
-    background-color: #2199ea;
+    color: #054269;
 }
 
 .meny{
     grid-area: meny;
-    background-color: #2199ea;
+    color: #054269;
 }
 
 .mineKontoer{
     grid-area: section1;
     justify-self: start;
     align-self: start;
+    background-color: #d4d2b2;
 }
 .accountSumSection1{
     grid-area: section1;
     justify-self: center;
+    background-color: #d4d2b2;
 }
 
 .midSection{
     grid-area: section2;
+    background-color: #d4d2b2;
 }
 
 .lastSection{
     grid-area: section3;
+    background-color: #d4d2b2;
 }
 .lastSection2{
     grid-area: section4;
+    background-color: #d4d2b2;
 }
 
 .firstRight{
     grid-area: topright;
     justify-self: end;
+    background-color: #d4d2b2;
 }
 
 .lastRight{
     grid-area: last;
+    background-color: #d4d2b2;
 }
 
 
@@ -75,4 +81,66 @@ body{
         'part4 part4 part4'
         'part5 part5 part5'
         'part6 part6 part6';
+}
+.logo{
+    grid-area: header;
+    justify-self: center;
+    background-color: #fcfad4;
+}
+.title{
+    grid-area: part1;
+    justify-self: center;
+}
+.username{
+    grid-area: part2;
+    justify-self: center;
+    align-self: start;
+}
+.usernameInput{
+    grid-area: part2;
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+    width: 200px;
+    font-family: Century Gothic;
+}
+.password{
+    grid-area: part2;
+    justify-self: center;
+    align-self: end;
+}
+.passwordInput{
+    grid-area: part3;
+    justify-self: center;
+    align-self: start;
+    height: 30px;
+    width: 200px;
+    font-family: Century Gothic;
+}
+.wrongLogIn{
+    grid-area: part3;
+    justify-self: center;
+    align-self: center;
+    color: darkred;
+}
+.logInButton{
+    grid-area: part4;
+    justify-self: center;
+    align-self: start;
+    font-size: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+}
+.noAccount{
+    grid-area: part5;
+    justify-self: center;
+    font-size: 20px;
+}
+.createAccoutButton{
+    font-size: 20px;
+    padding: 0;
+    border: none;
+    background: none;
 }

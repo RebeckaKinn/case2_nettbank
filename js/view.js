@@ -4,13 +4,15 @@ logIn();
 function logIn(){
     model.site.innerHTML = /*HTML*/`
     <div class="accountGrid">
-    <div><img src="img/logo.png"></div>
-    <h2>Logg inn</h2>
-    <input id="usernameInput" type="text" placeholder="Brukernavn"/>
-    <input id="passwordInput" type="text" placeholder="Passord"/>
-    <button onclick="logInInfo()">Logg Inn</button>
-    <div id="wrongLogIn"></div>
-    <div>Har ingen konto? <button onclick="createAccount()">Registrer deg her.</button></div>
+    <div class="logo"><img src="img/logo.png"></div>
+    <h2 class="title">Logg inn</h2>
+    <div class="username">Brukernavn</div>
+    <input class="usernameInput" id="usernameInput" type="text" placeholder="Brukernavn"/>
+    <div class="password">Passord</div>
+    <input class="passwordInput" id="passwordInput" type="text" placeholder="Passord"/>
+    <button class="logInButton" onclick="logInInfo()">Logg Inn</button>
+    <div class="wrongLogIn" id="wrongLogIn"></div>
+    <div class="noAccount">Har ingen konto? <button class="createAccoutButton" onclick="createAccount()">Registrer deg her.</button></div>
     </div>
     `;
 }
@@ -21,7 +23,7 @@ function createAccount(){
     model.wrongPassword = '';
     model.site.innerHTML = /*HTML*/`
     <div class="accountGrid">
-    <div><img src="img/logo.png"></div>
+    <div class="logo"><img src="img/logo.png"></div>
     <h2>Lag en bruker</h2>
     <h3>Ditt navn</h3>
     <input id="createName" type="text" placeholder="Fornavn"/>

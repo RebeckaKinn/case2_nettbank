@@ -74,7 +74,7 @@ function logInInfo(){
     }
 }
 
-//NOT TESTED
+//NOT DONE, lager en bruker men vil ikke logge på den nye brukeren
 //lager en ny bruker i users
 function createNewUser(){
     let wrongLogIn = document.getElementById(`wrongLogIn`);
@@ -85,6 +85,8 @@ function createNewUser(){
     let newLastName = document.getElementById(`createLastName`).value;
     wrongLogIn.innerHTML = '';
     if(newPassword1 != newPassword2){
+        newPassword1 = '';
+        newPassword2 = '';
         wrongLogIn.innerHTML = /*HTML*/`
         <h3>Passordene samsvarer ikke, prøv igjen.</h3>
         `;

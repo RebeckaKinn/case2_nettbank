@@ -10,7 +10,7 @@ const model = {
     users: [
         {name: 'Rebecka',
         lastname: 'Kinn',
-        password: 123,
+        password: '123',
         username: 'beckakinn',
         img: '',
         
