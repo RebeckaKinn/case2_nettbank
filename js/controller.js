@@ -52,7 +52,8 @@ function getAccountInfo(){
     model.loggedInUser[0].kontoer[2].sum;
 }
 
-//DONE 
+//NOT DONE resetter ikke username og password etter feil innlogging
+//
 //finner hvilken bruker som logger på pålogget
 function logInInfo(){
     let wrongLogIn = document.getElementById(`wrongLogIn`);
@@ -63,15 +64,16 @@ function logInInfo(){
             model.loggedInUser.push(model.users[i]);
             model.online = true;
             mainSite();
-        }
+        } 
+    };
         if(model.online == false){
             password = '';
             username = '';
             wrongLogIn.innerHTML = /*HTML*/`
             <h3>Passord eller brukernavn er feil. Prøv igjen.</h3>
             `;
-        }
-    }
+        };
+   
 }
 
 //NOT DONE, lager en bruker men vil ikke logge på den nye brukeren

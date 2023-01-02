@@ -76,9 +76,9 @@ body{
     grid-template-areas:
         'header header header'
         'part1 part1 part1'
-        'part2 part2 part2'
-        'part3 part3 part3'
-        'part4 part4 part4'
+        'part2 part22 part222'
+        'part3 part33 part333'
+        'part4 part44 part444'
         'part5 part5 part5'
         'part6 part6 part6';
 }
@@ -92,12 +92,12 @@ body{
     justify-self: center;
 }
 .username{
-    grid-area: part2;
+    grid-area: part22;
     justify-self: center;
     align-self: start;
 }
 .usernameInput{
-    grid-area: part2;
+    grid-area: part22;
     justify-self: center;
     align-self: center;
     height: 30px;
@@ -105,12 +105,12 @@ body{
     font-family: Century Gothic;
 }
 .password{
-    grid-area: part2;
+    grid-area: part22;
     justify-self: center;
     align-self: end;
 }
 .passwordInput{
-    grid-area: part3;
+    grid-area: part33;
     justify-self: center;
     align-self: start;
     height: 30px;
@@ -118,13 +118,13 @@ body{
     font-family: Century Gothic;
 }
 .wrongLogIn{
-    grid-area: part3;
+    grid-area: part5;
     justify-self: center;
-    align-self: center;
+    align-self: start;
     color: darkred;
 }
 .logInButton{
-    grid-area: part4;
+    grid-area: part44;
     justify-self: center;
     align-self: start;
     font-size: 25px;
@@ -136,6 +136,7 @@ body{
 .noAccount{
     grid-area: part5;
     justify-self: center;
+    align-self: center;
     font-size: 20px;
 }
 .createAccoutButton{
@@ -143,4 +144,77 @@ body{
     padding: 0;
     border: none;
     background: none;
+}
+
+
+.yourName{
+    grid-area: part2;
+    justify-self: end;
+    align-self: start;
+}
+.nameInput{
+    grid-area: part22;
+    justify-self: center;
+    align-self: start;
+    height: 30px;
+    width: 190px;
+    font-family: Century Gothic;
+}
+.lastNameInput{
+    grid-area: part22;
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+    width: 190px;
+    font-family: Century Gothic;
+}
+.username2{
+    grid-area: part3;
+    justify-self: end;
+    align-self: start;
+}
+.createUsernameInput{
+    grid-area: part33;
+    justify-self: center;
+    align-self: start;
+    height: 30px;
+    width: 190px;
+    font-family: Century Gothic;
+}
+.createPassword{
+    grid-area: part3;
+    justify-self: end;
+    align-self: end;
+}
+.createPassword1Input{
+    grid-area: part33;
+    justify-self: center;
+    align-self: end;
+    height: 30px;
+    width: 190px;
+    font-family: Century Gothic;
+}
+.createPassword2Input{
+    grid-area: part44;
+    justify-self: center;
+    align-self: start;
+    height: 30px;
+    width: 190px;
+    font-family: Century Gothic;
+}
+.wrongLogIn2{
+    grid-area: part44;
+    justify-self: center;
+    align-self: end;
+    color: darkred;
+}
+.buttonCreateAccount{
+    grid-area: part5;
+    justify-self: center;
+    align-self: start;
+    font-size: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
 }
