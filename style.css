@@ -4,4 +4,75 @@ body{
 }
 .container{
     display: grid;
+    padding: 3px;
+    grid-template-columns: 150px 420px 420px 400px;
+    grid-template-rows: 120px 200px 70px 140px 130px;
+    grid-template-areas:
+        'ikon ikon headline headline'
+        'meny section1 section1 topright'
+        'meny section2 section2 topright'
+        'meny section3 section4 last'
+        'meny section3 section4 last';
+}
+.icon{
+    grid-area: ikon;
+    background-color: #2199ea;
+}
+
+.titleBar{
+    grid-area: headline;
+    background-color: #2199ea;
+}
+
+.meny{
+    grid-area: meny;
+    background-color: #2199ea;
+}
+
+.mineKontoer{
+    grid-area: section1;
+    justify-self: start;
+    align-self: start;
+}
+.accountSumSection1{
+    grid-area: section1;
+    justify-self: center;
+}
+
+.midSection{
+    grid-area: section2;
+}
+
+.lastSection{
+    grid-area: section3;
+}
+.lastSection2{
+    grid-area: section4;
+}
+
+.firstRight{
+    grid-area: topright;
+    justify-self: end;
+}
+
+.lastRight{
+    grid-area: last;
+}
+
+
+
+.accountGrid{
+    display: grid;
+    max-width: 600px;
+    margin: 0 auto;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-areas:
+        'header header header'
+        'part1 part1 part1'
+        'part2 part2 part2'
+        'part3 part3 part3'
+        'part4 part4 part4'
+        'part5 part5 part5'
+        'part6 part6 part6';
 }
