@@ -79,21 +79,31 @@ function logInInfo(){
 //NOT DONE, lager en bruker men vil ikke logge på den nye brukeren
 //lager en ny bruker i users
 function createNewUser(){
+    let wrongInput = document.getElementById(`wrongInput`);
     let wrongLogIn = document.getElementById(`wrongLogIn`);
     let newPassword1 = document.getElementById(`createPassword1`).value;
     let newPassword2 = document.getElementById(`createPassword2`).value;
     let newUsername = document.getElementById(`createUsername`).value;
     let newName = document.getElementById(`createName`).value;
     let newLastName = document.getElementById(`createLastName`).value;
-    wrongLogIn.innerHTML = '';
-    if(newPassword1 != newPassword2){
+    if(newPassword1 != newPassword2 || newPassword1 == '' || newPassword2 == ''){
         newPassword1 = '';
         newPassword2 = '';
         wrongLogIn.innerHTML = /*HTML*/`
         <h3>Passordene samsvarer ikke, prøv igjen.</h3>
         `;
     }
-    if(newPassword1 === newPassword2){
+    if(newUsername == '' || newLastName == '' || newName == ''){
+        newPassword1 = '';
+        newPassword2 = '';
+        newUsername = '';
+        newName = '';
+        newLastName = '';
+        wrongInput.innerHTML = /*HTML*/`
+        <h3>Noen av feltene mangler.</h3>
+        `;
+    }
+    if(newPassword1 === newPassword2 && newPassword1 != '' && newPassword2 != ''){
         model.users.push(
             {name: newName,
             lastname: newLastName,

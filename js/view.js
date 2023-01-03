@@ -24,6 +24,7 @@ function createAccount(){
     <div class="accountGrid">
     <div class="logo"><img src="img/logo.png"></div>
     <h2 class="title">Lag en bruker</h2>
+    <div class="wrongInput" id="wrongInput"></div>
     <div class="yourName">Ditt navn</div>
     <input class="nameInput" id="createName" type="text" placeholder="Fornavn"/>
     <input class="lastNameInput" id="createLastName" type="text" placeholder="Etternavn"/>

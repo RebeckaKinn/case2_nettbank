@@ -147,6 +147,12 @@ body{
 }
 
 
+.wrongInput{
+    grid-area: part1;
+    justify-self: center;
+    align-self: end;
+    color: darkred;
+}
 .yourName{
     grid-area: part2;
     justify-self: end;
@@ -203,15 +209,15 @@ body{
     font-family: Century Gothic;
 }
 .wrongLogIn2{
-    grid-area: part44;
+    grid-area: part5;
     justify-self: center;
-    align-self: end;
+    align-self: start;
     color: darkred;
 }
 .buttonCreateAccount{
     grid-area: part5;
     justify-self: center;
-    align-self: start;
+    align-self: center;
     font-size: 25px;
     padding: 0;
     border: none;
