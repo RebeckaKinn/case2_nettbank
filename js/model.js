@@ -41,11 +41,4 @@ const model = {
 
     loggedInUser: [],
     totalsum: 0,
-
-    valgtKonto: [
-        {name: 'Brukskonto', sum: 100, date: '13.12.2022'}
-    ],
-    valgtBetal: [
-        {name: 'Fjordkraft', sum: 2300}
-    ],
 }

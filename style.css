@@ -4,11 +4,12 @@ body{
 }
 .container{
     display: grid;
-    padding: 3px;
-    grid-template-columns: 150px 420px 420px 400px;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: 150px 300px 300px 300px;
     grid-template-rows: 120px 200px 70px 140px 130px;
     grid-template-areas:
-        'ikon ikon headline headline'
+        'ikon headline headline infoside'
         'meny section1 section1 topright'
         'meny section2 section2 topright'
         'meny section3 section4 last'
@@ -17,10 +18,46 @@ body{
 .icon{
     grid-area: ikon;
 }
-
-.titleBar{
+.titleMainSite{
     grid-area: headline;
+    align-self: end;
+    justify-self: start;
+    margin-left: 50px;
+    font-size: 50px;
     color: #054269;
+}
+.welcomeTitle{
+    grid-area: infoside;
+    align-self: center;
+    justify-self: start;
+    color: #054269;
+}
+.nameTag{
+    grid-area: infoside;
+    align-self: end;
+    justify-self: start;
+    font-size: 25px;
+    color: #054269;
+}
+.logOutButton{
+    grid-area: infoside;
+    align-self: start;
+    justify-self: end;
+    font-size: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+    color: #054269;
+}
+.menuButton{
+    font-size: 15px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+    color: #054269;
+    margin-top: 30px;
 }
 
 .meny{
@@ -28,41 +65,119 @@ body{
     color: #054269;
 }
 
-.mineKontoer{
+
+.mineKontoerGrid{
     grid-area: section1;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 40px 40px 25px 25px 25px 40px;
+    grid-template-areas:
+        'head head head'
+        'top1 top2 top3'
+        'left1 mid1 right1'
+        'left2 mid2 right2'
+        'left3 mid3 right3'
+        'end1 end2 end3';
+}
+.accountNameTitle{
+    grid-area: top1;
+    align-self: center;
+}
+.accountName1Section1{
+    grid-area: left1;
     justify-self: start;
-    align-self: start;
-    background-color: #d4d2b2;
+    align-self: end;
 }
-.accountSumSection1{
-    grid-area: section1;
-    justify-self: center;
-    background-color: #d4d2b2;
+.accountName2Section1{
+    grid-area: left2;
+    justify-self: start;
+    align-self: end;
 }
+.accountName3Section1{
+    grid-area: left3;
+    justify-self: start;
+    align-self: end;
+}
+
+.accountSumTitle{
+    grid-area: top2;
+    align-self: center;
+}
+.accountSum1Section1{
+    grid-area: mid1;
+    justify-self: start;
+    align-self: end;
+}
+.accountSum2Section1{
+    grid-area: mid2;
+    justify-self: start;
+    align-self: end;
+}
+.accountSum3Section1{
+    grid-area: mid3;
+    justify-self: start;
+    align-self: end;
+}
+
+
+
+.accountDateTitle{
+    grid-area: top3;
+    align-self: center;
+}
+.accountDate1Section1{
+    grid-area: right1;
+    justify-self: start;
+    align-self: end;
+}
+.accountDate2Section1{
+    grid-area: right2;
+    justify-self: start;
+    align-self: end;
+}
+.accountDate3Section1{
+    grid-area: right3;
+    justify-self: start;
+    align-self: end;
+}
+.totalSum{
+    grid-area: end1;
+    justify-self: start;
+    align-self: end;
+}
+.totalSumNumber{
+    grid-area: end2;
+    justify-self: start;
+    align-self: end;
+}
+
+
+
 
 .midSection{
     grid-area: section2;
-    background-color: #d4d2b2;
+    background-color:whitesmoke;
 }
 
 .lastSection{
     grid-area: section3;
-    background-color: #d4d2b2;
+    background-color: whitesmoke;
 }
 .lastSection2{
     grid-area: section4;
-    background-color: #d4d2b2;
+    background-color: whitesmoke;
 }
 
 .firstRight{
     grid-area: topright;
     justify-self: end;
-    background-color: #d4d2b2;
+    background-color: whitesmoke;
 }
 
 .lastRight{
     grid-area: last;
-    background-color: #d4d2b2;
+    background-color: whitesmoke;
 }
 
 

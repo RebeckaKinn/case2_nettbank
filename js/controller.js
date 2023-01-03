@@ -8,21 +8,18 @@ function getAccountInfo(){
     for(let h = 0; h < model.loggedInUser[0].kontoer.length; h++){
         model.mineKontoer = /*HTML*/`
     <h3>Mine kontoer</h3>
-        <div class="accountNameSection1">NAVN
-        <div>${model.loggedInUser[0].kontoer[0].name}</div>
-        <div>${model.loggedInUser[0].kontoer[1].name}</div>
-        <div>${model.loggedInUser[0].kontoer[2].name}</div>
-        
-    <div class="accountSumSection1">SUM
-        <div>${model.loggedInUser[0].kontoer[0].sum}</div>
-        <div>${model.loggedInUser[0].kontoer[1].sum}</div>
-        <div>${model.loggedInUser[0].kontoer[2].sum}</div>
-        </div>
-    <div class="accountSumSection1">SIST ENDRET
-        <div>${model.loggedInUser[0].kontoer[0].date}</div>
-        <div>${model.loggedInUser[0].kontoer[1].date}</div>
-        <div>${model.loggedInUser[0].kontoer[2].date}</div>
-        </div>
+        <div class="accountNameTitle">NAVN</div>
+        <div class="accountName1Section1">${model.loggedInUser[0].kontoer[0].name}</div>
+        <div class="accountName2Section1">${model.loggedInUser[0].kontoer[1].name}</div>
+        <div class="accountName3Section1">${model.loggedInUser[0].kontoer[2].name}</div>
+    <div class="accountSumTitle">SUM</div>
+        <div class="accountSum1Section1">${model.loggedInUser[0].kontoer[0].sum}</div>
+        <div class="accountSum2Section1">${model.loggedInUser[0].kontoer[1].sum}</div>
+        <div class="accountSum3Section1">${model.loggedInUser[0].kontoer[2].sum}</div>
+    <div class="accountDateTitle">SIST ENDRET</div>
+        <div class="accountDate1Section1">${model.loggedInUser[0].kontoer[0].date}</div>
+        <div class="accountDate2Section1">${model.loggedInUser[0].kontoer[1].date}</div>
+        <div class="accountDate3Section1">${model.loggedInUser[0].kontoer[2].date}</div>
     `;
     }
     
@@ -52,8 +49,7 @@ function getAccountInfo(){
     model.loggedInUser[0].kontoer[2].sum;
 }
 
-//NOT DONE resetter ikke username og password etter feil innlogging
-//
+//DONE
 //finner hvilken bruker som logger på pålogget
 function logInInfo(){
     let wrongLogIn = document.getElementById(`wrongLogIn`);
@@ -76,7 +72,7 @@ function logInInfo(){
    
 }
 
-//NOT DONE, lager en bruker men vil ikke logge på den nye brukeren
+//DONE
 //lager en ny bruker i users
 function createNewUser(){
     let wrongInput = document.getElementById(`wrongInput`);
@@ -130,8 +126,6 @@ function createNewUser(){
 //Logg ut
 function logOut(){
     model.loggedInUser.splice(0, model.loggedInUser.length);
-    model.valgtBetal.splice(0, model.valgtBetal.length);
-    model.valgtKonto.splice(0, model.valgtKonto.length);
     model.online = false;
     logIn();
 }
