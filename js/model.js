@@ -17,7 +17,6 @@ const model = {
         kontoer: [
             {name: 'Brukskonto', sum: 100, date: '13.12.2022'},
             {name: 'Sparekonto', sum: 200, date: '13.12.2022'},
-            {name: 'Brukskonto Ekstra', sum: 2001, date: '14.12.2022'},
             {name: 'BSU', sum: 1000, date: '13.12.2022'},
             {name: 'Fond', sum: 500, date: '13.12.2022'},
             {name: 'Aksjer', sum: 0, date: '13.12.2022'},

@@ -55,7 +55,7 @@ function mainSite(){
     <div class="meny">
         <h3>MENY</h3><br/>
         <button class="menuButton">oversikt</button><br/>
-        <button class="menuButton">eFaktura</button><br/>
+        <button class="menuButton">samlet oversikt</button><br/>
         <button class="menuButton">budsjettkalkulator</button><br/>
         <button class="menuButton">pengebruk</button><br/>
         <button class="menuButton">instillinger</button><br/>
@@ -71,16 +71,15 @@ function mainSite(){
     <button class="seeAllTransactions">Se alle transaksjonene</button>
 
     <div class="uttakTitleGrid">
-    <h3>Uttak</h3>
+    <h3 class="uttakTittle">Uttak</h3>
     ${model.uttakSite}
     </div>
     <div class="lastSection2">
     <h3>Innskudd</h3>
     ${model.innskuddSite}
     </div>
-
-    <div class="firstRight">
-    <h3>Samlet oversikt</h3>
+    <div class="samletOversiktGrid">
+    <h3>Kontoer</h3>
     ${model.samletOversikt}
     </div>
 

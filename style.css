@@ -6,12 +6,12 @@ body{
     display: grid;
     max-width: 1000px;
     margin: 0 auto;
-    grid-template-columns: 150px 300px 300px 300px;
-    grid-template-rows: 120px 200px 70px 140px 130px;
+    grid-template-columns: 150px 300px 300px 200px;
+    grid-template-rows: 120px 200px 70px 140px 100px;
     grid-template-areas:
         'ikon headline headline infoside'
         'meny section1 section1 topright'
-        'meny section2 section2 topright'
+        'meny section2 section2 last'
         'meny section3 section4 last'
         'meny section3 section4 last';
 }
@@ -72,6 +72,7 @@ body{
     grid-area: section1;
     background-color: whitesmoke;
     border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
     display: grid;
     grid-template-columns: 200px 100px 100px;
     grid-template-rows: 40px 40px 25px 25px 25px 40px;
@@ -182,8 +183,9 @@ body{
     grid-area: section3;
     background-color: whitesmoke;
     border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
     display: grid;
-    grid-template-columns: 100px 90px 100px;
+    grid-template-columns: 100px 80px 80px;
     grid-template-rows: 50px 30px 30px 30px 30px;
     grid-template-areas:
         'title title title'
@@ -234,8 +236,9 @@ body{
     grid-area: section4;
     background-color: whitesmoke;
     border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
     display: grid;
-    grid-template-columns: 100px 90px 100px;
+    grid-template-columns: 100px 80px 80px;
     grid-template-rows: 50px 30px 30px 30px 30px;
     grid-template-areas:
         'title title title'
@@ -281,10 +284,66 @@ body{
     grid-area: date4;
 }
 
-.firstRight{
+
+.samletOversiktGrid{
     grid-area: topright;
-    justify-self: end;
     background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 50px 25px 25px 25px 25px 25px;
+    grid-template-areas:
+        'title title'
+        'name1 sum1'
+        'name2 sum2'
+        'name3 sum3'
+        'name4 sum4'
+        'name5 sum5'
+        'button1 button1';
+}
+.alleKontoerButton{
+    grid-area: button1;
+    justify-self: start;
+    font-size: 15px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+    cursor: pointer;
+}
+.uttakTittle{
+    grid-area: title;
+}
+.kontoerName1{
+    grid-area: name1;
+}
+.kontoerSum1{
+    grid-area: sum1;
+}
+.kontoerName2{
+    grid-area: name2;
+}
+.kontoerSum2{
+    grid-area: sum2;
+}
+.kontoerName3{
+    grid-area: name3;
+}
+.kontoerSum3{
+    grid-area: sum3;
+}
+.kontoerName4{
+    grid-area: name4;
+}
+.kontoerSum4{
+    grid-area: sum4;
+}
+.kontoerName5{
+    grid-area: name5;
+}
+.kontoerSum5{
+    grid-area: sum5;
 }
 
 .lastRight{

@@ -60,12 +60,25 @@ function getAccountInfo(){
             <div class="innskuddDate2">${model.loggedInUser[0].innskudd[innskudd1].date}</div>
             <div class="innskuddDate3">${model.loggedInUser[0].innskudd[innskudd2].date}</div>
         `;
-        
+            
         model.samletOversikt = /*HTML*/ `
-        <div class="kontoerName">${model.loggedInUser[0].kontoer[0].name}</div>
-        <div class="kontoerSum">${model.loggedInUser[0].kontoer[0].sum}</div>
-         `;
-        
+        <div class="kontoerName1">${model.loggedInUser[0].kontoer[0].name}</div>
+        <div class="kontoerSum1">${model.loggedInUser[0].kontoer[0].sum}</div>
+
+        <div class="kontoerName2">${model.loggedInUser[0].kontoer[1].name}</div>
+        <div class="kontoerSum2">${model.loggedInUser[0].kontoer[1].sum}</div>
+
+        <div class="kontoerName3">${model.loggedInUser[0].kontoer[2].name}</div>
+        <div class="kontoerSum3">${model.loggedInUser[0].kontoer[2].sum}</div>
+
+        <div class="kontoerName4">${model.loggedInUser[0].kontoer[3].name}</div>
+        <div class="kontoerSum4">${model.loggedInUser[0].kontoer[3].sum}</div>
+
+        <div class="kontoerName5">${model.loggedInUser[0].kontoer[4].name}</div>
+        <div class="kontoerSum5">${model.loggedInUser[0].kontoer[4].sum}</div>
+        <button class="alleKontoerButton" onclick="alleKontoer()">Se alle kontoene</button>
+        `; 
+    
     model.totalsum = 
     model.loggedInUser[0].kontoer[0].sum + 
     model.loggedInUser[0].kontoer[1].sum + 
