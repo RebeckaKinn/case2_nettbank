@@ -68,8 +68,10 @@ function mainSite(){
     </div>
 
     <div class="midSection">
-        <h3>Siste transaksjoner</h3>
-        <button>Se alle transaksjonene</button>
+        <h3 class="midTitle">Siste transaksjoner</h3>
+        </div>
+        <div class="midSection">
+        <button class="seeAllTransactions">Se alle transaksjonene</button>
     </div>
 
     <div class="lastSection">

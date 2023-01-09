@@ -70,7 +70,7 @@ body{
     grid-area: section1;
     background-color: whitesmoke;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 200px 100px 100px;
     grid-template-rows: 40px 40px 25px 25px 25px 40px;
     grid-template-areas:
         'head head head'
@@ -158,6 +158,22 @@ body{
 .midSection{
     grid-area: section2;
     background-color:whitesmoke;
+    border: 1px solid gray;
+}
+.midTitle{
+    grid-area: section2;
+    justify-self: start;
+    align-self: center;
+}
+.seeAllTransactions{
+    grid-area: section2;
+    justify-self: end;
+    align-self: center;
+    font-size: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
 }
 
 .lastSection{
