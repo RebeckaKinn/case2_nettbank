@@ -71,6 +71,7 @@ body{
 .mineKontoerGrid{
     grid-area: section1;
     background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
     display: grid;
     grid-template-columns: 200px 100px 100px;
     grid-template-rows: 40px 40px 25px 25px 25px 40px;
@@ -157,11 +158,8 @@ body{
 
 
 
-.midSection{
-    grid-area: section2;
-    background-color:whitesmoke;
-    border: 1px solid gray;
-}
+
+
 .midTitle{
     grid-area: section2;
     justify-self: start;
@@ -179,13 +177,108 @@ body{
     cursor: pointer;
 }
 
-.lastSection{
+
+.uttakTitleGrid{
     grid-area: section3;
     background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    display: grid;
+    grid-template-columns: 100px 90px 100px;
+    grid-template-rows: 50px 30px 30px 30px 30px;
+    grid-template-areas:
+        'title title title'
+        'name1 sum1 date1'
+        'name2 sum2 date2'
+        'name3 sum3 date3'
+        'name4 sum4 date4'; 
 }
+.uttakNameTitle{
+    grid-area: name1;
+}
+.uttakSumTitle{
+    grid-area: sum1;
+}
+.uttakDateTitle{
+    grid-area: date1;
+}
+.uttakName1{
+    grid-area: name2;
+}
+.uttakSum1{
+    grid-area: sum2;
+}
+.uttakDate1{
+    grid-area: date2;
+}
+.uttakName2{
+    grid-area: name3;
+}
+.uttakSum2{
+    grid-area: sum3;
+}
+.uttakDate2{
+    grid-area: date3;
+}
+.uttakName3{
+    grid-area: name4;
+}
+.uttakSum3{
+    grid-area: sum4;
+}
+.uttakDate3{
+    grid-area: date4;
+}
+
+
 .lastSection2{
     grid-area: section4;
     background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    display: grid;
+    grid-template-columns: 100px 90px 100px;
+    grid-template-rows: 50px 30px 30px 30px 30px;
+    grid-template-areas:
+        'title title title'
+        'name1 sum1 date1'
+        'name2 sum2 date2'
+        'name3 sum3 date3'
+        'name4 sum4 date4';
+}
+.inskuddNameTitle{
+    grid-area: name1;
+}
+.inskuddSumTitle{
+    grid-area: sum1;
+}
+.inskuddDateTitle{
+    grid-area: date1;
+}
+.innskuddName1{
+    grid-area: name2;
+}
+.innskuddSum1{
+    grid-area: sum2;
+}
+.innskuddDate1{
+    grid-area: date2;
+}
+.innskuddName2{
+    grid-area: name3;
+}
+.innskuddSum2{
+    grid-area: sum3;
+}
+.innskuddDate2{
+    grid-area: date3;
+}
+.innskuddName3{
+    grid-area: name4;
+}
+.innskuddSum3{
+    grid-area: sum4;
+}
+.innskuddDate3{
+    grid-area: date4;
 }
 
 .firstRight{

@@ -67,29 +67,15 @@ function mainSite(){
         <div class="totalSumNumber">${model.totalsum}</div>
     </div>
 
-    <div class="midSection">
-        <h3 class="midTitle">Siste transaksjoner</h3>
-        </div>
-        <div class="midSection">
-        <button class="seeAllTransactions">Se alle transaksjonene</button>
-    </div>
+    <h3 class="midTitle">Siste transaksjoner</h3>
+    <button class="seeAllTransactions">Se alle transaksjonene</button>
 
-    <div class="lastSection">
+    <div class="uttakTitleGrid">
     <h3>Uttak</h3>
-    <div>
-        <div>NAVN</div>
-        <div>SUM</div>
-        <div>DATO</div>
-    </div>
     ${model.uttakSite}
     </div>
     <div class="lastSection2">
     <h3>Innskudd</h3>
-    <div>
-        <div>NAVN</div>
-        <div>SUM</div>
-        <div>DATO</div>
-    </div>
     ${model.innskuddSite}
     </div>
 
