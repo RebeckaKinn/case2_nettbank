@@ -49,6 +49,7 @@ body{
     background: none;
     font-family: Century Gothic;
     color: #054269;
+    cursor: pointer;
 }
 .menuButton{
     font-size: 15px;
@@ -58,6 +59,7 @@ body{
     font-family: Century Gothic;
     color: #054269;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .meny{
@@ -174,6 +176,7 @@ body{
     border: none;
     background: none;
     font-family: Century Gothic;
+    cursor: pointer;
 }
 
 .lastSection{
@@ -263,6 +266,7 @@ body{
     border: none;
     background: none;
     font-family: Century Gothic;
+    cursor: pointer;
 }
 .noAccount{
     grid-area: part5;
@@ -275,6 +279,7 @@ body{
     padding: 0;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 
@@ -354,4 +359,5 @@ body{
     border: none;
     background: none;
     font-family: Century Gothic;
+    cursor: pointer;
 }
