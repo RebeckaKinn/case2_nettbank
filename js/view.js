@@ -41,8 +41,6 @@ function createAccount(){
 }
 
 //TODO
-//Hovedside med informasjon av den reelle brukeren. 
-//Må oppdatere for å være current user og ikke beta
 function mainSite(){
     getAccountInfo();
     model.site.innerHTML = /*HTML*/`
@@ -68,7 +66,7 @@ function mainSite(){
     </div>
 
     <h3 class="midTitle">Siste transaksjoner</h3>
-    <button class="seeAllTransactions">Se alle transaksjonene</button>
+    <button class="seeAllTransactions" onclick="seeAllTransactions()">Se alle transaksjonene</button>
 
     <div class="uttakTitleGrid">
     <h3 class="uttakTittle">Uttak</h3>
@@ -95,4 +93,8 @@ function mainSite(){
     </div>
     </div>
     `;
+}
+
+function seeAllTransactions(){
+    
 }
