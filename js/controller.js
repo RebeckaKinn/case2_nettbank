@@ -191,3 +191,12 @@ window.onclick = function(event) {
       }
     }
   }
+
+function chooseAccount(chosen){
+    if(chosen == 'Brukskonto') model.opprettetKonto = 'Brukskonto';
+    if(chosen == 'Sparekonto') model.opprettetKonto = 'Sparekonto';
+    if(chosen == 'BSU') model.opprettetKonto = 'BSU';
+    if(chosen == 'Fond') model.opprettetKonto = 'Fond';
+    if(chosen == 'Aksjer') model.opprettetKonto = 'Aksjer';
+    return model.opprettetKonto;
+}

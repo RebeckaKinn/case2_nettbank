@@ -5,6 +5,8 @@ const model = {
     innskuddSite: '',
     mineKontoer: '',
     samletOversikt: '',
+
+    opprettetKonto: 'Brukskonto',
     online: false,
     
     users: [

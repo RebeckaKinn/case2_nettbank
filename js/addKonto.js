@@ -20,15 +20,17 @@ function addKonto(){
     <h3>Kontotype</h3>
     <button onclick="showDropdown()" class="dropbtn">Velg kontotype</button>
         <div id="dropdownMenu" class="dropdown-content">
-            <div>Brukskonto</div>
-            <div>Sparekonto</div>
-            <div>BSU</div>
-            <div>Fond</div>
-            <div>Aksjer</div>
+            <div onclick="chooseAccount('Brukskonto')">Brukskonto</div>
+            <div onclick="chooseAccount('Sparekonto')">Sparekonto</div>
+            <div onclick="chooseAccount('BSU')">BSU</div>
+            <div onclick="chooseAccount('Fond')">Fond</div>
+            <div onclick="chooseAccount('Aksjer')">Aksjer</div>
         </div>
     </div>
+    <div>${model.opprettetKonto}</div>
     <div>Kontonavn</div>
-    <input type="text" placeholder="kontonavn"/>*/
+    <input type="text" placeholder="kontonavn"/>
     
+    <button>Opprett konto</button>
     `;
 }
