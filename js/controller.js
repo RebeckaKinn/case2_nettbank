@@ -76,7 +76,7 @@ function getAccountInfo(){
 
         <div class="kontoerName5">${model.loggedInUser[0].kontoer[4].name}</div>
         <div class="kontoerSum5">${model.loggedInUser[0].kontoer[4].sum}</div>
-        <button class="alleKontoerButton" onclick="alleKontoer()">Se alle kontoene</button>
+        <button class="alleKontoerButton" onclick="overview()">Se alle kontoene</button>
         `; 
     
     model.totalsum = 
@@ -166,4 +166,28 @@ function logOut(){
     logIn();
 }
 
+function getAccounts(){
+    for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
+        model.samletOversikt += /*HTML*/`
+            <div class="kontoNamei">${model.loggedInUser[0].kontoer[i].name}</div>
+            <div class="kontoSumi">${model.loggedInUser[0].kontoer[i].sum}</div>
+            <div class="kontoDatei">${model.loggedInUser[0].kontoer[i].date}</div>
+        `;
+    }
+}
 
+function showDropdown() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+  
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      let dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }

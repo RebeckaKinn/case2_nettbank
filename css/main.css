@@ -513,3 +513,49 @@ body{
     font-family: Century Gothic;
     cursor: pointer;
 }
+
+.overviewGridTop{
+    grid-area: section1;
+    background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        'title1 title2 title3'
+        'food food food';
+}
+
+
+.dropbtn {
+    font-size: 20px;
+    padding: 0;
+    background: none;
+    font-family: Century Gothic;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    grid-area: section1;
+    background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.show {display:block;}
