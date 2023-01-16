@@ -169,10 +169,10 @@ function logOut(){
 function getAccounts(){
     for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
         model.samletOversikt += /*HTML*/`
-            <div class="kontoNamei">${model.loggedInUser[0].kontoer[i].name}</div>
-            <div class="kontoSumi">${model.loggedInUser[0].kontoer[i].sum}</div>
-            <div class="kontoDatei">${model.loggedInUser[0].kontoer[i].date}</div>
-        `;
+            <div class="kontoName">${model.loggedInUser[0].kontoer[i].name}</div>
+            <div class="kontoSum">${model.loggedInUser[0].kontoer[i].sum}</div>
+            <div class="kontoDate">${model.loggedInUser[0].kontoer[i].date}</div>
+            `;
     }
 }
 
@@ -193,10 +193,25 @@ window.onclick = function(event) {
   }
 
 function chooseAccount(chosen){
-    if(chosen == 'Brukskonto') model.opprettetKonto = 'Brukskonto';
-    if(chosen == 'Sparekonto') model.opprettetKonto = 'Sparekonto';
-    if(chosen == 'BSU') model.opprettetKonto = 'BSU';
-    if(chosen == 'Fond') model.opprettetKonto = 'Fond';
-    if(chosen == 'Aksjer') model.opprettetKonto = 'Aksjer';
+    if(chosen == 1) model.opprettetKonto = 'Brukskonto';
+    if(chosen == 2) model.opprettetKonto = 'Sparekonto';
+    if(chosen == 3) model.opprettetKonto = 'BSU';
+    if(chosen == 4) model.opprettetKonto = 'Fond';
+    if(chosen == 5) model.opprettetKonto = 'Aksjer';
+    model.createdName = model.opprettetKonto;
+    addKonto();
     return model.opprettetKonto;
+}
+
+function createAccountName(){
+    let inputAccountName = document.getElementById(`inputKontonavn`).value;
+    model.createdName = inputAccountName;
+    addKonto();
+}
+
+function createNewKonto(){
+    model.loggedInUser[0].kontoer.push(
+        {name: model.createdName, sum: 0, date: model.date}
+    )
+    overview();
 }

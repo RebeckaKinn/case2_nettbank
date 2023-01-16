@@ -7,6 +7,7 @@ const model = {
     samletOversikt: '',
 
     opprettetKonto: 'Brukskonto',
+    createdName: '',
     online: false,
     
     users: [
