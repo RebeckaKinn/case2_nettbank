@@ -8,6 +8,9 @@ const model = {
 
     opprettetKonto: 'Brukskonto',
     createdName: '',
+
+    dropdownKontoer: '',
+    newKontoName: '',
     online: false,
     
     users: [

@@ -557,3 +557,37 @@ body{
 
 .dropdown-content a:hover {background-color: #ddd;}
 .show {display:block;}
+
+
+
+
+
+
+.dropbtn2 {
+    font-size: 20px;
+    padding: 0;
+    background: none;
+    font-family: Century Gothic;
+    border: none;
+    cursor: pointer;
+}
+.dropdown2 {
+    position: relative;
+    grid-area: section1;
+    background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+}
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    padding-left: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dropdown-content2 a:hover {background-color: #ddd;}
+.show2 {display:block;}

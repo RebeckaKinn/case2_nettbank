@@ -215,3 +215,31 @@ function createNewKonto(){
     )
     overview();
 }
+
+function showKontoerDropdown(){
+    document.getElementById("dropdownMenu2").classList.toggle("show2");
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn2')) {
+      let dropdowns2 = document.getElementsByClassName("dropdown-content2");
+      for (let j = 0; j < dropdowns2.length; j++) {
+        let openDropdown2 = dropdowns2[j];
+        if (openDropdown2.classList.contains('show2')) {
+          openDropdown2.classList.remove('show2');
+        }
+      }
+    }
+  }
+function chooseKontoNameChange(i){
+    model.opprettetKonto = model.loggedInUser[0].konto[i].name;
+    model.newKontoName = model.opprettetKonto;
+    settings();
+}
+
+function generateKonto(){
+    for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
+        model.dropdownKontoer += /*HTML*/`
+        <div onclick="chooseKontoNameChange(${i})">${model.loggedInUser[0].kontoer[i].name}</div>
+        `;
+    }
+}
