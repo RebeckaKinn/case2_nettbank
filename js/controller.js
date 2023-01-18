@@ -94,6 +94,7 @@ function logInInfo(){
     for(let i = 0; i < model.users.length; i++){
         if(password == model.users[i].password && username == model.users[i].username){
             model.loggedInUser.push(model.users[i]);
+            model.users.splice(i, 1)
             model.online = true;
             mainSite();
         } 
@@ -161,6 +162,7 @@ function createNewUser(){
 //DONE
 //Logg ut
 function logOut(){
+    model.users.push(model.loggedInUser[0]);
     model.loggedInUser.splice(0, model.loggedInUser.length);
     model.online = false;
     logIn();
@@ -176,6 +178,8 @@ function getAccounts(){
     }
 }
 
+//Done
+//Dropdown menu til å legge til kontoer
 function showDropdown() {
     document.getElementById("dropdownMenu").classList.toggle("show");
 }
@@ -202,20 +206,21 @@ function chooseAccount(chosen){
     addKonto();
     return model.opprettetKonto;
 }
-
+//Done
+//Lage navn til ny konto
 function createAccountName(){
     let inputAccountName = document.getElementById(`inputKontonavn`).value;
     model.createdName = inputAccountName;
     addKonto();
 }
-
 function createNewKonto(){
     model.loggedInUser[0].kontoer.push(
         {name: model.createdName, sum: 0, date: model.date}
     )
     overview();
 }
-
+//DONE
+//Dropdown menu til settings
 function showKontoerDropdown(){
     document.getElementById("dropdownMenu2").classList.toggle("show2");
 }
@@ -230,16 +235,47 @@ window.onclick = function(event) {
       }
     }
   }
-function chooseKontoNameChange(i){
-    model.opprettetKonto = model.loggedInUser[0].konto[i].name;
-    model.newKontoName = model.opprettetKonto;
-    settings();
-}
-
 function generateKonto(){
-    for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
-        model.dropdownKontoer += /*HTML*/`
-        <div onclick="chooseKontoNameChange(${i})">${model.loggedInUser[0].kontoer[i].name}</div>
-        `;
+      for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
+          model.dropdownKontoer += /*HTML*/`
+          <div onclick="chooseKontoNameChange(${i})">${model.loggedInUser[0].kontoer[i].name}</div>
+          `;
+        }
+}
+//Not done
+//Endre navnet til eksisterende konto
+function chooseKontoNameChange(i){
+        model.opprettetKonto = model.loggedInUser[0].konto[i].name;
+        model.newKontoName = model.opprettetKonto;
+        settings();
+}
+    
+function saveChanges(notCorrect, savedChanges){
+    let name = document.getElementById(`newNameInput`).value;
+    let lastName = document.getElementById(`newLastNameInput`).value;
+    model.newUserName = name;
+    model.newUserLastName = lastName;
+    if(model.newUserName !== '' && model.newUserLastName !==''){
+        model.loggedInUser[0].name = model.newUserName;
+        model.loggedInUser[0].lastname = model.newUserLastName;
+    }else{return;}
+
+    let oldPassword = document.getElementById(`oldPassword`).value;
+    let newPassword1 = document.getElementById(`newPassword1`).value;
+    let newPassword2 = document.getElementById(`newPassword2`).value;
+    if(oldPassword !== '' && newPassword1 !== '' && newPassword2 !== ''){
+        if(oldPassword == model.loggedInUser[0].password && newPassword1 == newPassword2){
+            model.loggedInUser[0].password = newPassword1;
+        }
+        if(oldPassword != model.loggedInUser[0].password || newPassword1 != newPassword2){
+            notCorrect = /*HTML*/`
+            <h3>Noen av passordene samsvarer ikke. Prøv igjen.</h3>
+            `;
+            settings();
+        }
     }
+    savedChanges = /*HTML*/ `
+    <h3 class="settingsFlex">Endringene er lagret.</h3>
+    `;
+    settings(); 
 }

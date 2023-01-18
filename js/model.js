@@ -11,6 +11,9 @@ const model = {
 
     dropdownKontoer: '',
     newKontoName: '',
+
+    newUserName: '',
+    newUserLastName: '',
     online: false,
     
     users: [
