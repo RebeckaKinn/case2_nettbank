@@ -14,6 +14,9 @@ const model = {
 
     newUserName: '',
     newUserLastName: '',
+
+    settingsSaved: '',
+    settingsWrongPassword: '',
     online: false,
     
     users: [

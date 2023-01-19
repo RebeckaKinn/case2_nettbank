@@ -1,6 +1,8 @@
 
 //TODO
 function mainSite(){
+    model.settingsSaved = '';
+    model.settingsWrongPassword = '';
     getAccountInfo();
     model.site.innerHTML = /*HTML*/`
     <div class="container">

@@ -250,32 +250,32 @@ function chooseKontoNameChange(i){
         settings();
 }
     
-function saveChanges(notCorrect, savedChanges){
+function saveChanges(){
     let name = document.getElementById(`newNameInput`).value;
     let lastName = document.getElementById(`newLastNameInput`).value;
+    let oldPassword = document.getElementById(`oldPassword`).value;
+    let newPassword1 = document.getElementById(`newPassword1`).value;
+    let newPassword2 = document.getElementById(`newPassword2`).value;
     model.newUserName = name;
     model.newUserLastName = lastName;
     if(model.newUserName !== '' && model.newUserLastName !==''){
         model.loggedInUser[0].name = model.newUserName;
         model.loggedInUser[0].lastname = model.newUserLastName;
-    }else{return;}
-
-    let oldPassword = document.getElementById(`oldPassword`).value;
-    let newPassword1 = document.getElementById(`newPassword1`).value;
-    let newPassword2 = document.getElementById(`newPassword2`).value;
-    if(oldPassword !== '' && newPassword1 !== '' && newPassword2 !== ''){
+    }
+    if(oldPassword != '' || newPassword1 != '' || newPassword2 != ''){
         if(oldPassword == model.loggedInUser[0].password && newPassword1 == newPassword2){
             model.loggedInUser[0].password = newPassword1;
         }
         if(oldPassword != model.loggedInUser[0].password || newPassword1 != newPassword2){
-            notCorrect = /*HTML*/`
-            <h3>Noen av passordene samsvarer ikke. Prøv igjen.</h3>
+            model.settingsWrongPassword = /*HTML*/`
+            <h3 class="settingsFlex">Noen av passordene samsvarer ikke. Prøv igjen.</h3>
             `;
-            settings();
+            
         }
     }
-    savedChanges = /*HTML*/ `
+    model.settingsSaved = /*HTML*/ `
     <h3 class="settingsFlex">Endringene er lagret.</h3>
     `;
+    console.log('work')
     settings(); 
 }

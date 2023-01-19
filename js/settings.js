@@ -1,6 +1,4 @@
 function settings(){
-    let savedChanges = '';
-    let notCorrect = '';
     generateKonto();
     model.site.innerHTML = /*HTML*/`
     <div class="container">
@@ -33,7 +31,7 @@ function settings(){
         <input type="text" id="newPassword1" placeholder="nytt passord"/>
         <div>Gjenta passord</div>
         <input type="text" id="newPassword2" placeholder="gjenta passord"/>
-        <div>${notCorrect}</div>
+        ${model.settingsWrongPassword}
     
         <div>Endre navn på konto</div>
         <div class="dropdown2">
@@ -43,8 +41,8 @@ function settings(){
             </div>
         </div>
         <input type="text" value="${model.newKontoName}"/>
-        <button onclick="saveChanges(notCorrect, savedChanges)">Lagre</button>
-        <div>${savedChanges}</div>
+        <button onclick="saveChanges()">Lagre</button>
+        ${model.settingsSaved}
     </div>
     `;
 }
