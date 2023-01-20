@@ -10,7 +10,8 @@ const model = {
     createdName: '',
 
     dropdownKontoer: '',
-    newKontoName: '',
+    newKontoName: 'Brukskonto',
+    index: 0,
 
     newUserName: '',
     newUserLastName: '',

@@ -1,4 +1,6 @@
 function addKonto(){
+    model.settingsSaved = '';
+    model.settingsWrongPassword = '';
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
@@ -10,8 +12,7 @@ function addKonto(){
         <h3>MENY</h3><br/>
         <button class="menuButton" onclick="mainSite()">oversikt</button><br/>
         <button class="menuButton" onclick="overview()">samlet oversikt</button><br/>
-        <button class="menuButton">budsjettkalkulator</button><br/>
-        <button class="menuButton">betale regninger</button><br/>
+        <button class="menuButton" onclick="payBills()">betale regninger</button><br/>
         <button class="menuButton" onclick="settings()">instillinger</button><br/>
         <button class="menuButton" onclick="addKonto()">legg til konto</button><br/>
     </div>

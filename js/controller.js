@@ -1,6 +1,8 @@
 //TODO
 //Finner brukerens informasjon til hovedsiden (må nok dele dette opp i flere functions og legge inn functions istedenfor her)
 function getAccountInfo(){
+    model.settingsSaved = '';
+    model.settingsWrongPassword = '';
     model.mineKontoer = '';
     model.uttakSite = '';
     model.innskuddSite = '';
@@ -162,6 +164,8 @@ function createNewUser(){
 //DONE
 //Logg ut
 function logOut(){
+    model.settingsSaved = '';
+    model.settingsWrongPassword = '';
     model.users.push(model.loggedInUser[0]);
     model.loggedInUser.splice(0, model.loggedInUser.length);
     model.online = false;
@@ -236,17 +240,18 @@ window.onclick = function(event) {
     }
   }
 function generateKonto(){
+    model.dropdownKontoer = '';
       for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
           model.dropdownKontoer += /*HTML*/`
           <div onclick="chooseKontoNameChange(${i})">${model.loggedInUser[0].kontoer[i].name}</div>
           `;
         }
-}
-//Not done
-//Endre navnet til eksisterende konto
-function chooseKontoNameChange(i){
-        model.opprettetKonto = model.loggedInUser[0].konto[i].name;
-        model.newKontoName = model.opprettetKonto;
+    }
+    //DONE
+    //Endre navnet til eksisterende konto
+    function chooseKontoNameChange(i){
+        model.newKontoName = model.loggedInUser[0].kontoer[i].name;
+        model.index = i;
         settings();
 }
     
@@ -256,6 +261,7 @@ function saveChanges(){
     let oldPassword = document.getElementById(`oldPassword`).value;
     let newPassword1 = document.getElementById(`newPassword1`).value;
     let newPassword2 = document.getElementById(`newPassword2`).value;
+    let kontoNameInput = document.getElementById(`newKontoNameInput`).value;
     model.newUserName = name;
     model.newUserLastName = lastName;
     if(model.newUserName !== '' && model.newUserLastName !==''){
@@ -275,9 +281,12 @@ function saveChanges(){
             `;
         }
     }
+    model.loggedInUser[0].kontoer[model.index].name = kontoNameInput;
+    model.newKontoName = model.loggedInUser[0].kontoer[model.index].name;
+
     model.settingsSaved = /*HTML*/ `
     <h3 class="settingsFlex">Endringene er lagret.</h3>
     `;
-    console.log(model.loggedInUser[0].password)
+    console.log(model.loggedInUser[0].kontoer[model.index].name)
     settings(); 
 }
