@@ -1,25 +1,24 @@
 const model = {
+    //app
     site: document.getElementById(`app`),
     date: new Date().toLocaleDateString(),
     uttakSite: '',
     innskuddSite: '',
     mineKontoer: '',
     samletOversikt: '',
-
-    opprettetKonto: 'Brukskonto',
-    createdName: '',
-
-    dropdownKontoer: '',
-    newKontoName: 'Brukskonto',
-    index: 0,
-
-    newUserName: '',
-    newUserLastName: '',
-
     settingsSaved: '',
     settingsWrongPassword: '',
-    online: false,
+    dropdownKontoer: '',
     
+    //input
+    loggedInUser: [],
+    opprettetKonto: 'Brukskonto',
+    createdName: '',
+    newKontoName: 'Brukskonto',
+    newUserName: '',
+    newUserLastName: '',
+    
+    //data
     users: [
         {name: 'Rebecka',
         lastname: 'Kinn',
@@ -35,22 +34,25 @@ const model = {
             {name: 'Aksjer', sum: 0, date: '13.12.2022'},
             {name: 'Lån', sum: 10000, date: '13.12.2022'},
             {name: 'Mastercard', sum: 467, date: '13.12.2022'},
-            ],
-
+        ],
+        
         uttak: [
             {name: 'butikk', sum: -100, date: '03.12.2022'},
             {name: 'overføring', sum: -200, date: '21.12.2022'},
             {name: 'regning', sum: -300, date: '22.12.2022'},
-            ],
-
+            {name: 'regning', sum: -300, date: '22.12.2022'},
+        ],
+        
         innskudd: [
             {name: 'overføring', sum: 500,  date: '19.12.2022'},
             {name: 'overføring', sum: 200, date: '21.12.2022'},
             {name: 'lønning', sum: 22500, date: '24.12.2022'},
-            ],
-        },
+            {name: 'lønning', sum: 22500, date: '24.12.2022'},
         ],
+    },
+],
 
-    loggedInUser: [],
-    totalsum: 0,
+index: 0,
+totalsum: 0,
+online: false,
 }

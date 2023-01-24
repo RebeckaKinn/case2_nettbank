@@ -2,6 +2,9 @@
 //TODO
 function mainSite(){
     getAccountInfo();
+    getUttak();
+    getInnskudd();
+    mainsiteOverview();
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
@@ -19,10 +22,6 @@ function mainSite(){
     </div>
 
     <div class="mineKontoerGrid">
-    <h3>Mine kontoer</h3>
-    <div class="accountNameTitle">NAVN</div>
-    <div class="accountSumTitle">SUM</div>
-    <div class="accountDateTitle">SIST ENDRET</div>
     ${model.mineKontoer}
         <div class="totalSum">Sum kontoer: </div>
         <div class="totalSumNumber">${model.totalsum}</div>
@@ -32,23 +31,14 @@ function mainSite(){
     <button class="seeAllTransactions" onclick="seeAllTransactions()">Se alle transaksjonene</button>
 
     <div class="uttakTitleGrid">
-    <h3 class="uttakTittle">Uttak</h3>
-    <div class="uttakNameTitle">NAVN</div>
-    <div class="uttakSumTitle">SUM</div>
-    <div class="uttakDateTitle">DATO</div>
     ${model.uttakSite}
     </div>
     
     <div class="lastSection2">
-    <h3>Innskudd</h3>
-    <div class="inskuddNameTitle">NAVN</div>
-    <div class="inskuddSumTitle">SUM</div>
-    <div class="inskuddDateTitle">DATO</div>
     ${model.innskuddSite}
     </div>
 
     <div class="samletOversiktGrid">
-    <h3>Kontoer</h3>
     ${model.samletOversikt}
     </div>
 

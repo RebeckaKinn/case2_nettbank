@@ -1,4 +1,3 @@
-
 function overview(){
     model.samletOversikt = '';
     getAccounts();
