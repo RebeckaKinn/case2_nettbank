@@ -94,20 +94,19 @@ function getUttak(){
             `;
         }
     }
-    console.log(model.uttakSite)
 }
 
 function getInnskudd(){
     model.loggedInUser[0].innskudd.reverse();
     model.innskuddSite = /*HTML*/`
-    <h3 class="title">Innskudd</h3>
+    <h3 class="innskuddTitle">Innskudd</h3>
     <div class="inskuddNameTitle">NAVN</div>
     <div class="inskuddSumTitle">SUM</div>
     <div class="inskuddDateTitle">DATO</div>
     `;
     if(model.loggedInUser[0].innskudd.length == 0){
             model.innskuddSite = /*HTML*/`
-            <h3 class="title">Ingen registrerte innskudd enda</h3>
+            <h3 class="innskuddTitle">Ingen registrerte innskudd enda</h3>
             `;
     }else if(model.loggedInUser[0].innskudd.length > 4){
         model.innskuddSite += /*HTML*/`
@@ -180,4 +179,41 @@ function mainsiteOverview(){
             `;
         }
     }
+}
+
+
+function chooseOtherAccount(chosenMenu){
+    document.getElementById("dropdownMenu").classList.toggle("show");
+    let html = document.getElementById(`dropdownMenu`);
+    if(chosenMenu == index1){
+        index = index1;
+    }
+    if(chosenMenu == index2){
+        index = index2;
+    }
+    for(let i = 0; i > model.loggedInUser[0].kontoer.length; i++){
+        html.innerHTML = /*HTML*/`
+        <div onclick="chosenNewAccount(index, ${i})">
+                ${model.loggedInUser[0].kontoer[i].name} 
+                ${model.loggedInUser[0].kontoer[i].sum}
+        </div>
+        `;
+        return html;
+    }
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.buttonChooseAccount')) {
+      let dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+function chosenNewAccount(index, newIndex){
+    index = newIndex;
+    return index;
 }

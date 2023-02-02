@@ -1,0 +1,12 @@
+.overviewGridTop{
+    grid-area: section1;
+    background-color: whitesmoke;
+    border: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        'title1 title2 title3'
+        'food food food';
+}

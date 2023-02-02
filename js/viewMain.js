@@ -5,6 +5,8 @@ function mainSite(){
     getUttak();
     getInnskudd();
     mainsiteOverview();
+    let index1 = 0;
+    let index2 = 1;
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
@@ -23,8 +25,6 @@ function mainSite(){
 
     <div class="mineKontoerGrid">
     ${model.mineKontoer}
-        <div class="totalSum">Sum kontoer: </div>
-        <div class="totalSumNumber">${model.totalsum}</div>
     </div>
 
     <h3 class="midTitle">Siste transaksjoner</h3>
@@ -44,13 +44,26 @@ function mainSite(){
 
     <div class="lastRight">
     <h3>Overfør fra</h3>
-        <div>${model.loggedInUser[0].kontoer[0].name}</div>
-        <div>${model.loggedInUser[0].kontoer[0].sum}</div>
-        <button onclick="chooseOtherAccount()">Velg en annen konto</button>
+        <div>${model.loggedInUser[0].kontoer[index1].name} 
+            ${model.loggedInUser[0].kontoer[index1].sum} kr</div>
+
+    <div>
+        <button class="buttonChooseAccount" 
+        onclick="chooseOtherAccount(${index1})">
+        Velg en annen konto</button>
+        <div id="dropdownMenu" class="dropdown-content"></div>
+    </div>
+        <br/><br/>
+
     <h3>Overføre til</h3>
-        <div>${model.loggedInUser[0].kontoer[1].name}</div>
-        <div>${model.loggedInUser[0].kontoer[1].sum}</div>
-        <button onclick="chooseOtherPay()">Velg en annen konto</button>
+        <div>${model.loggedInUser[0].kontoer[index2].name} 
+            ${model.loggedInUser[0].kontoer[index2].sum} kr</div>
+        
+    <div>
+        <button class="buttonChooseAccount" 
+        onclick="chooseOtherAccount(${index2})">
+        Velg en annen konto</button>
+        <div id="dropdownMenu" class="dropdown-content"></div>
     </div>
     </div>
     `;
