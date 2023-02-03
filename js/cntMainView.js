@@ -53,7 +53,7 @@ function getAccountInfo(){
 }
 
 function getUttak(){
-    model.loggedInUser[0].uttak.reverse();
+    //model.loggedInUser[0].uttak.reverse();
     model.uttakSite = /*HTML*/ `
     <h3 class="uttakTittle">Uttak</h3>
     <div class="uttakNameTitle">NAVN</div>
@@ -97,7 +97,7 @@ function getUttak(){
 }
 
 function getInnskudd(){
-    model.loggedInUser[0].innskudd.reverse();
+    //model.loggedInUser[0].innskudd.reverse();
     model.innskuddSite = /*HTML*/`
     <h3 class="innskuddTitle">Innskudd</h3>
     <div class="inskuddNameTitle">NAVN</div>
@@ -183,23 +183,16 @@ function mainsiteOverview(){
 
 
 function chooseOtherAccount(chosenMenu){
-    document.getElementById("dropdownMenu").classList.toggle("show");
-    let html = document.getElementById(`dropdownMenu`);
-    if(chosenMenu == index1){
-        index = index1;
+    if(chosenMenu == 'accountTo'){
+        index = model.index1;
+        document.getElementById("accountToDropdown").classList.toggle("show");
     }
-    if(chosenMenu == index2){
-        index = index2;
+    if(chosenMenu == 'accountFrom'){
+        index = model.index2;
+        document.getElementById("accountFromDropdown").classList.toggle("show");
     }
-    for(let i = 0; i > model.loggedInUser[0].kontoer.length; i++){
-        html.innerHTML = /*HTML*/`
-        <div onclick="chosenNewAccount(index, ${i})">
-                ${model.loggedInUser[0].kontoer[i].name} 
-                ${model.loggedInUser[0].kontoer[i].sum}
-        </div>
-        `;
-        return html;
-    }
+
+    
 }
 window.onclick = function(event) {
     if (!event.target.matches('.buttonChooseAccount')) {
@@ -213,7 +206,27 @@ window.onclick = function(event) {
     }
   }
 
+  
+function showMenu(index){
+      model.accountTo = '';
+      for(let i = 0; i < model.loggedInUser[0].kontoer.length; i++){
+          model.accountTo += /*HTML*/`
+          <div onclick="chosenNewAccount(index, ${i})">
+          ${model.loggedInUser[0].kontoer[i].name} 
+          ${model.loggedInUser[0].kontoer[i].sum}
+          </div>
+          `;
+        }
+    return model.accountTo;
+}
+
 function chosenNewAccount(index, newIndex){
-    index = newIndex;
-    return index;
+        if(model.index1 == index) model.index1 = newIndex;
+        if(model.index2 == index) model.index2 = newIndex;
+        if(model.index1 == model.index2) model.index1 = 0;
+    mainSite();
+}
+
+function transfer(){
+    
 }

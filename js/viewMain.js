@@ -1,12 +1,12 @@
 
 //TODO
+
 function mainSite(){
     getAccountInfo();
     getUttak();
     getInnskudd();
     mainsiteOverview();
-    let index1 = 0;
-    let index2 = 1;
+    showMenu();
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
@@ -43,28 +43,31 @@ function mainSite(){
     </div>
 
     <div class="lastRight">
+    <div>
     <h3>Overfør fra</h3>
-        <div>${model.loggedInUser[0].kontoer[index1].name} 
-            ${model.loggedInUser[0].kontoer[index1].sum} kr</div>
-
-    <div>
-        <button class="buttonChooseAccount" 
-        onclick="chooseOtherAccount(${index1})">
-        Velg en annen konto</button>
-        <div id="dropdownMenu" class="dropdown-content"></div>
-    </div>
-        <br/><br/>
-
+        <div>${model.loggedInUser[0].kontoer[model.index1].name} 
+            ${model.loggedInUser[0].kontoer[model.index1].sum} kr</div>
+        <div>
+            <button class="buttonChooseAccount" 
+            onclick="chooseOtherAccount('accountTo')">
+            Velg en annen konto</button>
+        <div id="accountToDropdown" class="dropdown-content">
+        ${model.accountTo}</div>
+        </div>
     <h3>Overføre til</h3>
-        <div>${model.loggedInUser[0].kontoer[index2].name} 
-            ${model.loggedInUser[0].kontoer[index2].sum} kr</div>
-        
-    <div>
-        <button class="buttonChooseAccount" 
-        onclick="chooseOtherAccount(${index2})">
-        Velg en annen konto</button>
-        <div id="dropdownMenu" class="dropdown-content"></div>
-    </div>
+        <div>${model.loggedInUser[0].kontoer[model.index2].name} 
+            ${model.loggedInUser[0].kontoer[model.index2].sum} kr</div>
+        <div>
+            <button class="buttonChooseAccount" 
+            onclick="chooseOtherAccount('accountFrom')">
+            Velg en annen konto</button>
+        <div id="accountFromDropdown" class="dropdown-content">
+        ${model.accountTo}</div>
+        </div>
+        <br/>
+        <input type="number" value="${model.newNumber}" placeholder="sum"/>
+            <button class="transferButton" onclick="transfer()">Overfør</button>
+        </div>
     </div>
     `;
 }

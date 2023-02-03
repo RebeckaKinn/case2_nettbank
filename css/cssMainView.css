@@ -195,6 +195,7 @@
 
 .lastRight{
     grid-area: last;
+    display: flex;
     background-color: whitesmoke;
     border: 1px solid rgb(170, 159, 159);
     padding-left: 10px;
@@ -208,4 +209,15 @@
     font-family: Century Gothic;
     cursor: pointer;
     font-size: 16px;
+}
+
+.transferButton{
+    justify-self: center;
+    margin-top: 5px;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
 }

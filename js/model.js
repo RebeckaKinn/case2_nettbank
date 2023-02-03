@@ -9,6 +9,9 @@ const model = {
     settingsSaved: '',
     settingsWrongPassword: '',
     dropdownKontoer: '',
+    accountTo: '',
+    accountFrom: '',
+    newNumber: '',
     
     //input
     loggedInUser: [],
@@ -55,4 +58,6 @@ const model = {
 index: 0,
 totalsum: 0,
 online: false,
+index1: 0,
+index2: 1,
 }
