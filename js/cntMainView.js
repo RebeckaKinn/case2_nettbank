@@ -228,5 +228,15 @@ function chosenNewAccount(index, newIndex){
 }
 
 function transfer(){
-    
+    let sub = 0;
+    let add = 0;
+    let numberInput = document.querySelector(`#numberInput`);
+    model.newNumber = parseInt(numberInput.value);
+    sub = model.loggedInUser[0].kontoer[model.index1].sum - model.newNumber;
+    add = model.loggedInUser[0].kontoer[model.index2].sum + model.newNumber;
+    model.loggedInUser[0].kontoer[model.index1].sum = sub;
+    model.loggedInUser[0].kontoer[model.index2].sum = add;
+    model.newNumber = '';
+    console.log(sub, add)
+    mainSite();
 }

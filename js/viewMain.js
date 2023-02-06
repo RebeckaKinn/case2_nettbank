@@ -65,7 +65,7 @@ function mainSite(){
         ${model.accountTo}</div>
         </div>
         <br/>
-        <input type="number" value="${model.newNumber}" placeholder="sum"/>
+        <input type="number" value="${model.newNumber}" placeholder="sum" id="numberInput"/>
             <button class="transferButton" onclick="transfer()">Overfør</button>
         </div>
     </div>
