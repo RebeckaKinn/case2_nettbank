@@ -1,5 +1,6 @@
 function overview(){
     model.samletOversikt = '';
+    model.paied = false;
     getAccounts();
     model.site.innerHTML = /*HTML*/`
     <div class="container">

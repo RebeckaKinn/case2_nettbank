@@ -20,8 +20,16 @@ const model = {
     newKontoName: 'Brukskonto',
     newUserName: '',
     newUserLastName: '',
+    payTo: 'Sparekonto',
     
     //data
+    index: 0,
+    totalsum: 0,
+    online: false,
+    index1: 0,
+    index2: 1,
+    paied: false,
+
     users: [
         {name: 'Rebecka',
         lastname: 'Kinn',
@@ -54,10 +62,4 @@ const model = {
         ],
     },
 ],
-
-index: 0,
-totalsum: 0,
-online: false,
-index1: 0,
-index2: 1,
 }

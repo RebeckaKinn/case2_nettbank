@@ -1,4 +1,5 @@
 function payBills(){
+    patToAccount();
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
@@ -17,13 +18,36 @@ function payBills(){
     
         <div class="payToFlex">
         <div>Betale til</div>
-
-        <input type="number" id="numberInput"/>
-        
+        <label>Kontonummer: </label>
+        <input 
+            class="payInput"
+            type="number" 
+            id="numberInput"
+            min="11"
+            max="11"
+            placeholder="Kontonummer 11 siffer"
+            style="width: 100px;"/>
 
         <div>Betale fra</div>
-        <button>${model.loggedInUser[0].kontoer[model.index].name}</button>
-    </div>
+        <div class="dropdown2">
+        <button onclick="showKontoerDropdown()" class="dropbtn2">${model.payTo}</button>
+            <div id="dropdownMenu2" class="dropdown-content2">
+                ${model.dropdownKontoer}
+            </div>
+        </div>
+        <label>Sum: </label>
+        <input
+            type="number"
+            id="inputPay"
+            style="width: 100px;"
+            placeholder="Betallingssum"/>
+
+        <button onclick="payTo()">Betal</button>
+        ${model.paied 
+            ? `<div>Overføringen var vellykket</div>`
+            : ''
+        }
+        </div>
     </div>
     `;
 }

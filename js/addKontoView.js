@@ -1,6 +1,7 @@
 function addKonto(){
     model.settingsSaved = '';
     model.settingsWrongPassword = '';
+    model.paied = false;
     model.site.innerHTML = /*HTML*/`
     <div class="container">
     <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
