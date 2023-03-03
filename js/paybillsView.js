@@ -17,11 +17,13 @@ function payBills(){
     
         <div class="payToFlex">
         <div>Betale til</div>
+
         <input type="number" id="numberInput"/>
         
 
         <div>Betale fra</div>
         <button>${model.loggedInUser[0].kontoer[model.index].name}</button>
+    </div>
     </div>
     `;
 }
