@@ -28,12 +28,9 @@ function chooseAccount(chosen){
 }
 //Done
 //Lage navn til ny konto
-function createAccountName(){
-    let inputAccountName = document.getElementById(`inputKontonavn`).value;
-    model.createdName = inputAccountName;
-    addKonto();
-}
 function createNewKonto(){
+  let inputAccountName = document.getElementById(`inputKontonavn`).value;
+    model.createdName = inputAccountName;
     model.loggedInUser[0].kontoer.push(
         {name: model.createdName, sum: 0, date: model.date}
     )

@@ -17,10 +17,15 @@ function overview(){
     <button class="menuButton" onclick="settings()">instillinger</button><br/>
     <button class="menuButton" onclick="addKonto()">legg til konto</button><br/>
     </div>
+
+    <div class="background"></div>
+    <div class="background2"></div>
+    <div class="background3"></div>
+
     <div class="overviewGridTop">
-    <div class="">NAVN</div>
-    <div class="">SUM</div>
-    <div class="">DATO</div>
+    <div class="overviewName">NAVN</div>
+    <div class="overviewSum">SUM</div>
+    <div class="overviewDate">DATO</div>
     ${model.samletOversikt}
     </div>
     `;

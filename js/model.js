@@ -21,6 +21,8 @@ const model = {
     newUserName: '',
     newUserLastName: '',
     payTo: 'Sparekonto',
+    warning: '',
+    warningPay: '',
     
     //data
     index: 0,

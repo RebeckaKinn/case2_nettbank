@@ -67,7 +67,10 @@ body{
     color: #054269;
 }
 
-
+.warning{
+    color: brown;
+    font-size: 15px;
+}
 
 
 
@@ -86,7 +89,9 @@ body{
     position: relative;
     grid-area: section1;
     background-color: whitesmoke;
-    border: 1px solid rgb(170, 159, 159);
+    border-right: 1px solid rgb(170, 159, 159);
+    border-top: 1px solid rgb(170, 159, 159);
+    border-left: 1px solid rgb(170, 159, 159);
     padding-left: 10px;
 }
 .dropdown-content {
@@ -119,9 +124,8 @@ body{
 .dropdown2 {
     position: relative;
     grid-area: section1;
-    background-color: whitesmoke;
-    border: 1px solid rgb(170, 159, 159);
-    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 }
 .dropdown-content2 {
     display: none;

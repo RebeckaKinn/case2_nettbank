@@ -17,6 +17,10 @@ function addKonto(){
         <button class="menuButton" onclick="settings()">instillinger</button><br/>
         <button class="menuButton" onclick="addKonto()">legg til konto</button><br/>
     </div>
+
+    <div class="background"></div>
+    <div class="background2"></div>
+    <div class="background3"></div>
     
     <div class="dropdown">
     <h3>Kontotype</h3>
@@ -30,11 +34,8 @@ function addKonto(){
         </div>
         <br/><br/>
         <div>Kontotype: ${model.opprettetKonto}</div>
-        <div>Kontonavn: ${model.createdName}</div>
         <div>Kontonavn</div>
         <input id="inputKontonavn" class="inputKontonavn" type="text" placeholder="kontonavn"/>
-        <button class="createAccountNameButton" onclick="createAccountName()">Lagre kontonavn</button>
-
         <button class="opprettKontoButton" onclick="createNewKonto()">Opprett konto</button>
     </div>
     `;

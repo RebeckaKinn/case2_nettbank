@@ -49,11 +49,17 @@ function transfer(){
     let add = 0;
     let numberInput = document.querySelector(`#numberInput`);
     model.newNumber = parseInt(numberInput.value);
+    if(model.newNumber > model.loggedInUser[0].kontoer[model.index1].sum){
+        model.warning = /*HTML*/`
+        <i class="warning">Du har ikke nok på konto</i>
+        `;
+    } else {
     sub = model.loggedInUser[0].kontoer[model.index1].sum - model.newNumber;
     add = model.loggedInUser[0].kontoer[model.index2].sum + model.newNumber;
     model.loggedInUser[0].kontoer[model.index1].sum = sub;
     model.loggedInUser[0].kontoer[model.index2].sum = add;
     model.newNumber = '';
-    console.log(sub, add)
+    model.warning = '';
+    }
     mainSite();
 }

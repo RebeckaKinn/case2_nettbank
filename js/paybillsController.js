@@ -19,6 +19,11 @@ function patToAccount(){
 function payTo(){
     let inputPay = document.querySelector(`#inputPay`);
     let accountNumber = document.querySelector(`#numberInput`);
+    if(inputPay.value > model.loggedInUser[0].kontoer[model.index].sum){
+        model.warningPay = /*HTML*/`
+        <i class="warning">Du har ikke nok på konto</i>
+        `;
+    } else {
     model.newNumber = parseInt(inputPay.value);
     model.loggedInUser[0].kontoer[model.index].sum = model.loggedInUser[0].kontoer[model.index].sum - model.newNumber;
     model.loggedInUser[0].uttak.push({
@@ -28,5 +33,6 @@ function payTo(){
                             },)
     model.newNumber = 0;
     model.paied = true;
+    }
     payBills();
 }
