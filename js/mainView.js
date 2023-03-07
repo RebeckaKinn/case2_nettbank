@@ -259,8 +259,14 @@ function menu(){
     <div class="titleMainSite">${model.title}</div>
     <div class="welcomeTitle">Velkommen</div>
     <div class="nameTag">${model.loggedInUser[0].name} ${model.loggedInUser[0].lastname}</div>
+    <div class="mainViewImage">
     <button class="logOutButton" onclick="logOut()">Logg ut</button>
-
+    <img src="${model.loggedInUser[0].img}" 
+        style="width: auto; 
+            height: 60px; 
+            border-radius: 100px;
+            cursor: pointer;"/>
+    </div>
     <div class="meny">
         <h3>MENY</h3><br/>
         <button class="menuButton" onclick="reset(), mainSite()">oversikt</button><br/>

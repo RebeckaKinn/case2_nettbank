@@ -21,15 +21,29 @@ function settings(){
         ${model.settingsWrongPassword}
     
         <div>Endre navn på konto</div>
-        <div class="dropdown2">
-        <button onclick="showKontoerDropdown()" class="dropbtn2">${model.newKontoName}</button>
-            <div id="dropdownMenu2" class="dropdown-content2">
+            <div class="dropdown2">
+                <button onclick="showKontoerDropdown()" class="dropbtn2">${model.newKontoName}</button>
+                <div id="dropdownMenu2" class="dropdown-content2">
                 ${model.dropdownKontoer}
+                </div>
             </div>
+            <input type="text" id="newKontoNameInput" 
+            value="${model.loggedInUser[0].kontoer[model.index].name}"/>
+            
+            </div>
+            <div class="saveButtonFlex">
+                <button onclick="saveChanges()" class="saveButton">Lagre</button>
+                ${model.settingsSaved}
+            </div>
+        <div class="changeProfile">
+            <div class="changeImgTitle">Endre profilbildet</div>
+            <img src="${model.loggedInUser[0].img}" 
+            onclick="changeImage()"
+            style="width: auto; 
+            height: 200px; 
+            border-radius: 100px;
+            cursor: pointer;"/>
         </div>
-        <input type="text" id="newKontoNameInput" value="${model.loggedInUser[0].kontoer[model.index].name}"/>
-        <button onclick="saveChanges()">Lagre</button>
-        ${model.settingsSaved}
     </div>
     `;
 }

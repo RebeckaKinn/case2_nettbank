@@ -38,7 +38,7 @@ const model = {
         lastname: 'Kinn',
         password: '123',
         username: 'beckakinn',
-        img: '',
+        img: 'img/profilbildet.jpg',
         
         kontoer: [
             {name: 'Brukskonto', sum: 100, date: '13.12.2022'},

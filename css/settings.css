@@ -1,0 +1,43 @@
+.changeProfile{
+    grid-area: section2;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-right: 45px;
+}
+
+.changeImgTitle{
+    padding-bottom: 30px;
+}
+
+.settingsFlex{
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.saveButton{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Century Gothic;
+    color: #054269;
+    cursor: pointer;
+}
+
+.saveButtonFlex{
+    grid-column: 2 / 4;
+    grid-row: 4 / 6;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}

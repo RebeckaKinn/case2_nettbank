@@ -60,7 +60,7 @@ function saveChanges(){
     model.newKontoName = model.loggedInUser[0].kontoer[model.index].name;
 
     model.settingsSaved = /*HTML*/ `
-    <h3 class="settingsFlex">Endringene er lagret.</h3>
+    <h3>Endringene er lagret.</h3>
     `;
     console.log(model.loggedInUser[0].kontoer[model.index].name)
     settings(); 

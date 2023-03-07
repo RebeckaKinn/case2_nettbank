@@ -40,16 +40,21 @@ body{
     color: #054269;
 }
 .logOutButton{
-    grid-area: infoside;
-    align-self: start;
-    justify-self: end;
-    font-size: 20px;
+    font-size: 15px;
     padding: 0;
     border: none;
     background: none;
     font-family: Century Gothic;
     color: #054269;
     cursor: pointer;
+    padding-bottom: 6px;
+}
+.mainViewImage{
+    grid-area: infoside;
+    align-self: start;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
 }
 .menuButton{
     font-size: 15px;

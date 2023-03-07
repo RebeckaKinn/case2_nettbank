@@ -66,7 +66,7 @@ function createNewUser(){
             lastname: newLastName,
             password: newPassword1,
             username: newUsername,
-            img: '',
+            img: 'img/default_profile.png',
             kontoer: [{name: 'Brukskonto', sum: 0, date: model.date},
                     {name: 'Sparekonto', sum: 0, date: model.date},
                     {name: 'BSU', sum: 0, date: model.date},
