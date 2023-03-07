@@ -23,6 +23,7 @@ const model = {
     payTo: 'Sparekonto',
     warning: '',
     warningPay: '',
+    title: '',
     
     //data
     index: 0,

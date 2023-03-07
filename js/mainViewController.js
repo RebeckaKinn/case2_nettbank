@@ -63,3 +63,22 @@ function transfer(){
     }
     mainSite();
 }
+
+function reset(){
+    model.settingsSaved = '';
+    model.settingsWrongPassword = '';
+    model.newNumber = '';
+    model.createdName = '';
+    model.newUserName = '';
+    model.newUserLastName = '';
+    model.warning = '';
+    model.warningPay = '';
+    model.paied = false;
+    model.uttakSite = '';
+    model.innskuddSite = '';
+    model.mineKontoer = '';
+    model.samletOversikt = '';
+    model.dropdownKontoer = '';
+    model.accountTo = '';
+    model.accountFrom = '';
+}

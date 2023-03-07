@@ -8,21 +8,10 @@ function mainSite(){
     mainsiteOverview();
     showMenu();
     model.paied = false;
+    model.title = 'Oversikt';
     model.site.innerHTML = /*HTML*/`
     <div class="container">
-    <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
-    <div class="titleMainSite">Oversikt</div>
-    <div class="welcomeTitle">Velkommen</div><div class="nameTag">${model.loggedInUser[0].name} ${model.loggedInUser[0].lastname}</div>
-    <button class="logOutButton" onclick="logOut()">Logg ut</button>
-
-    <div class="meny">
-        <h3>MENY</h3><br/>
-        <button class="menuButton" onclick="mainSite()">oversikt</button><br/>
-        <button class="menuButton" onclick="overview()">samlet oversikt</button><br/>
-        <button class="menuButton" onclick="payBills()">betale regninger</button><br/>
-        <button class="menuButton" onclick="settings()">instillinger</button><br/>
-        <button class="menuButton" onclick="addKonto()">legg til konto</button><br/>
-    </div>
+    ${menu()}
 
     <div class="mineKontoerGrid">
     ${model.mineKontoer}
@@ -263,3 +252,23 @@ function mainsiteOverview(){
 }
 
 
+function menu(){
+    let menu = ''
+    menu = /*HTML*/`
+    <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
+    <div class="titleMainSite">${model.title}</div>
+    <div class="welcomeTitle">Velkommen</div>
+    <div class="nameTag">${model.loggedInUser[0].name} ${model.loggedInUser[0].lastname}</div>
+    <button class="logOutButton" onclick="logOut()">Logg ut</button>
+
+    <div class="meny">
+        <h3>MENY</h3><br/>
+        <button class="menuButton" onclick="reset(), mainSite()">oversikt</button><br/>
+        <button class="menuButton" onclick="reset(), overview()">samlet oversikt</button><br/>
+        <button class="menuButton" onclick="reset(), payBills()">betale regninger</button><br/>
+        <button class="menuButton" onclick="reset(), settings()">instillinger</button><br/>
+        <button class="menuButton" onclick="reset(), addKonto()">legg til konto</button><br/>
+    </div>
+    `;
+    return menu;
+}
