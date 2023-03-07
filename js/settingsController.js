@@ -65,3 +65,16 @@ function saveChanges(){
     console.log(model.loggedInUser[0].kontoer[model.index].name)
     settings(); 
 }
+
+function changeImage(){
+    const imageUpload = document.getElementById(`imgUpload`);
+    imageUpload.addEventListener("change", function() {
+      const newImg = new FileReader();
+      newImg.addEventListener("load", () => {
+        model.newProfileimg = newImg.result;
+      });
+      newImg.readAsDataURL(this.files[0])
+    });
+    model.newImgProofing = true;
+    settings();
+}

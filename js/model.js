@@ -24,6 +24,8 @@ const model = {
     warning: '',
     warningPay: '',
     title: '',
+    newProfileimg: '',
+    newImgProofing: false,
     
     //data
     index: 0,

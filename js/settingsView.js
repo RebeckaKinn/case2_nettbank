@@ -35,15 +35,30 @@ function settings(){
                 <button onclick="saveChanges()" class="saveButton">Lagre</button>
                 ${model.settingsSaved}
             </div>
-        <div class="changeProfile">
-            <div class="changeImgTitle">Endre profilbildet</div>
-            <img src="${model.loggedInUser[0].img}" 
-            onclick="changeImage()"
-            style="width: auto; 
-            height: 200px; 
-            border-radius: 100px;
-            cursor: pointer;"/>
+
+            <div class="changeProfile">
+            ${model.newImgProofing
+                ? `
+                <div class="changeImgTitle">Nytt bildet</div>
+                <img src="${model.newProfileimg}"
+                style="width: auto; 
+                height: 200px; 
+                border-radius: 100px;"/>
+                `
+                : `
+                <div class="changeImgTitle">Endre profilbildet</div>
+                <img src="${model.loggedInUser[0].img}" 
+                style="width: auto; 
+                height: 200px; 
+                border-radius: 100px;"/>`}
         </div>
+        <input oninput="changeImage()"
+            type="file" 
+            id="imgUpload" 
+            accepted="image/jpeg, image/png, image/jpg"/>
     </div>
     `;
 }
+
+//det nye bildet dukker ikke opp
+//må flytte upload knappen

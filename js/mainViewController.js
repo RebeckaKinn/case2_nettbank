@@ -81,4 +81,6 @@ function reset(){
     model.dropdownKontoer = '';
     model.accountTo = '';
     model.accountFrom = '';
+    model.newProfileimg = '';
+    model.newImgProofing = false;
 }
