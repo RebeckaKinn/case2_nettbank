@@ -1,40 +1,45 @@
 
 function seeAllTransactions(){
-    model.site.innerHTML = /*HTML*/`
-    <div class="container">
-    <div class="icon"><img src="img/logo_mainsite.png" style=" height: 120px;"></div>
-    <div class="titleMainSite">Alle transaksjoner</div>
-    <div class="welcomeTitle">Velkommen</div><div class="nameTag">${model.loggedInUser[0].name} ${model.loggedInUser[0].lastname}</div>
-    <button class="logOutButton" onclick="logOut()">Logg ut</button>
-
-    <div class="meny">
-        <h3>MENY</h3><br/>
-        <button class="menuButton" onclick="mainSite()">oversikt</button><br/>
-        <button class="menuButton" onclick="overview()">samlet oversikt</button><br/>
-        <button class="menuButton" onclick="payBills()">betale regninger</button><br/>
-        <button class="menuButton" onclick="settings()">instillinger</button><br/>
-        <button class="menuButton" onclick="addKonto()">legg til konto</button><br/>
-    </div>
-    <div class="">NAVN</div>
-    <div class="">SUM</div>
-    <div class="">DATO</div>
-
-    <div class="">NAVN</div>
-    <div class="">SUM</div>
-    <div class="">DATO</div>
-    `;
+    model.title = 'Alle transaksjoner';
+    let uttak = '';
+    let innskudd = '';
     for(let i = 0; i < model.loggedInUser[0].uttak.length; i++){
-        model.site.innerHTML += /*HTML*/`
-            <div class="uttakNamei">${model.loggedInUser[0].uttak[i].name}</div>
-            <div class="uttakSumi">${model.loggedInUser[0].uttak[i].sum}</div>
-            <div class="uttakDatei">${model.loggedInUser[0].uttak[i].date}</div>
+        uttak += /*HTML*/`
+        <div class="kontoGridUttak">
+            <div class="uttakNameTransaction">${model.loggedInUser[0].uttak[i].name}</div>
+            <div class="uttakSumTransaction">${model.loggedInUser[0].uttak[i].sum}</div>
+            <div class="uttakDateTransaction">${model.loggedInUser[0].uttak[i].date}</div>
+        </div>
             `;
     }
     for(let j = 0; j < model.loggedInUser[0].innskudd.length; j++){
-        model.site.innerHTML += /*HTML*/`
-            <div class="innskuddNamej">${model.loggedInUser[0].innskudd[j].name}</div>
-            <div class="innskuddSumj">${model.loggedInUser[0].innskudd[j].sum}</div>
-            <div class="innskuddDatej">${model.loggedInUser[0].innskudd[j].date}</div>
+        innskudd += /*HTML*/`
+        <div class="kontoGridInnskudd">
+            <div class="innskuddNameTransaction">${model.loggedInUser[0].innskudd[j].name}</div>
+            <div class="innskuddSumTransaction">${model.loggedInUser[0].innskudd[j].sum}</div>
+            <div class="innskuddDateTransaction">${model.loggedInUser[0].innskudd[j].date}</div>
+        </div>
         `;
     }
+    model.site.innerHTML = /*HTML*/`
+    <div class="container">
+    ${menu()}
+    <div class="transactionsGridLeft">
+        <div class="tName">NAVN</div>
+        <div class="tSum">SUM</div>
+        <div class="tDate">DATO</div>
+            ${uttak}
+    </div>
+    <div class="transactionsGridRight">
+        <div class="dName">NAVN</div>
+        <div class="dSum">SUM</div>
+        <div class="dDate">DATO</div>
+            ${innskudd}
+    </div>
+
+        <div class="background"></div>
+        <div class="background2"></div>
+        <div class="background3"></div>
+    </div>
+    `;
 }

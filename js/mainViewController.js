@@ -58,6 +58,16 @@ function transfer(){
     add = model.loggedInUser[0].kontoer[model.index2].sum + model.newNumber;
     model.loggedInUser[0].kontoer[model.index1].sum = sub;
     model.loggedInUser[0].kontoer[model.index2].sum = add;
+    model.loggedInUser[0].uttak.push({
+                                      name: model.loggedInUser[0].kontoer[model.index1].name,
+                                      sum: '-' + model.newNumber,
+                                      date: model.date
+    },)
+    model.loggedInUser[0].innskudd.push({
+                                        name: model.loggedInUser[0].kontoer[model.index2].name,
+                                        sum: model.newNumber,
+                                        date: model.date,
+    },)
     model.newNumber = '';
     model.warning = '';
     }

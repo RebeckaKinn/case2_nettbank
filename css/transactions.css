@@ -1,0 +1,92 @@
+.transactionsGridLeft{
+    grid-column: 2 / 3;
+    grid-row: 2 / auto;
+    background-color: whitesmoke;
+    border-top: 1px solid rgb(170, 159, 159);
+    border-left: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 90px 90px 90px 30px 90px 90px 90px;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+    'place1 place2 place3'
+    'food food food';
+}
+.transactionsGridRight{
+    grid-column: 3 / 4;
+    grid-row: 2 / auto;
+    background-color: whitesmoke;
+    border-right: 1px solid rgb(170, 159, 159);
+    border-top: 1px solid rgb(170, 159, 159);
+    padding-left: 10px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        'place4 place5 place6'
+        'food1 food1 food1';
+}
+
+
+
+
+
+.tName{
+    grid-area: place1;
+}
+.tSum{
+    grid-area: place2;
+}
+.tDate{
+    grid-area: place3;
+}
+
+.dName{
+    grid-area: place4;
+}
+.dSum{
+    grid-area: place5;
+}
+.dDate{
+    grid-area: place6;
+}
+
+.kontoGridUttak{
+    grid-column-start: food;
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 20px;
+    grid-template-areas:
+        'name sum date'; 
+    font-size: 15px;
+}
+.uttakNameTransaction{
+    grid-area: name;
+}
+.uttakSumTransaction{
+    grid-area: sum;
+}
+.uttakDateTransaction{
+    grid-area: date;
+}
+
+.kontoGridInnskudd{
+    grid-column-start: food1;
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 20px;
+    grid-template-areas:
+        'name1 sum1 date1'; 
+    font-size: 15px;
+}
+.innskuddNameTransaction{
+    grid-area: name1;
+}
+.innskuddSumTransaction{
+    grid-area: sum1;
+}
+.innskuddDateTransaction{
+    grid-area: date1;
+}

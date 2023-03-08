@@ -50,7 +50,8 @@ function settings(){
                 <img src="${model.loggedInUser[0].img}" 
                 style="width: auto; 
                 height: 200px; 
-                border-radius: 100px;"/>`}
+                border-radius: 100px;"/>
+                `}
         </div>
         <input oninput="changeImage()"
             type="file" 
@@ -59,6 +60,3 @@ function settings(){
     </div>
     `;
 }
-
-//det nye bildet dukker ikke opp
-//må flytte upload knappen

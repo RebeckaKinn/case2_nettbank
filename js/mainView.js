@@ -265,7 +265,8 @@ function menu(){
         style="width: auto; 
             height: 60px; 
             border-radius: 100px;
-            cursor: pointer;"/>
+            cursor: pointer;"
+            onclick="reset(), settings()"/>
     </div>
     <div class="meny">
         <h3>MENY</h3><br/>

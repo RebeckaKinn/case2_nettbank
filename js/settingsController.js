@@ -1,4 +1,3 @@
-//DONE
 //Dropdown menu til settings
 function showKontoerDropdown(){
     document.getElementById("dropdownMenu2").classList.toggle("show2");
@@ -22,7 +21,7 @@ function generateKonto(){
           `;
         }
     }
-    //DONE
+
     //Endre navnet til eksisterende konto
     function chooseKontoNameChange(i){
         model.newKontoName = model.loggedInUser[0].kontoer[i].name;
@@ -59,10 +58,12 @@ function saveChanges(){
     model.loggedInUser[0].kontoer[model.index].name = kontoNameInput;
     model.newKontoName = model.loggedInUser[0].kontoer[model.index].name;
 
+    model.loggedInUser[0].img = model.newProfileimg;
+
     model.settingsSaved = /*HTML*/ `
     <h3>Endringene er lagret.</h3>
     `;
-    console.log(model.loggedInUser[0].kontoer[model.index].name)
+    
     settings(); 
 }
 
@@ -72,6 +73,7 @@ function changeImage(){
       const newImg = new FileReader();
       newImg.addEventListener("load", () => {
         model.newProfileimg = newImg.result;
+        return model.newProfileimg;
       });
       newImg.readAsDataURL(this.files[0])
     });

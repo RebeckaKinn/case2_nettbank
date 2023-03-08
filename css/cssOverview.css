@@ -5,25 +5,22 @@
     border-top: 1px solid rgb(170, 159, 159);
     border-left: 1px solid rgb(170, 159, 159);
     padding-left: 10px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 150px 150px 150px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 50px auto;
     grid-template-areas:
         'title1 title2 title3'
         'food food food';
 }
 
 .overviewName{
-    padding-top: 50px;
-    padding-bottom: 50px;
     grid-area: title1;
 }
 .overviewSum{
-    padding-top: 50px;
     grid-area: title2;
 }
 .overviewDate{
-    padding-top: 50px;
     grid-area: title3;
 }
 
@@ -32,22 +29,26 @@
     background-color: whitesmoke;
     border-left: 1px solid rgb(170, 159, 159);
     border-right: 1px solid rgb(170, 159, 159);
+    z-index: -100;
 }
 .background2{
     grid-area: section3;
     background-color: whitesmoke;
     border-left: 1px solid rgb(170, 159, 159);
     border-bottom: 1px solid rgb(170, 159, 159);
+    z-index: -100;
 }
 .background3{
     grid-area: section4;
     background-color: whitesmoke;
     border-bottom: 1px solid rgb(170, 159, 159);
     border-right: 1px solid rgb(170, 159, 159);
+    z-index: -100;
 }
 .background4{
     grid-area: section1;
     border-right: 1px solid rgb(170, 159, 159);
     border-top: 1px solid rgb(170, 159, 159);
     border-left: 1px solid rgb(170, 159, 159);
+    z-index: -100;
 }
