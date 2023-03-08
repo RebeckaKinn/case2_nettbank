@@ -23,16 +23,18 @@ function payTo(){
         model.warningPay = /*HTML*/`
         <i class="warning">Du har ikke nok på konto</i>
         `;
+        model.paied = false;
     } else {
     model.newNumber = parseInt(inputPay.value);
     model.loggedInUser[0].kontoer[model.index].sum = model.loggedInUser[0].kontoer[model.index].sum - model.newNumber;
     model.loggedInUser[0].uttak.push({
-                                name: accountNumber,
+                                name: accountNumber.value,
                                 sum: model.newNumber,
                                 date: model.date,
                             },)
     model.newNumber = 0;
     model.paied = true;
+    model.warningPay = '';
     }
     payBills();
 }

@@ -43,3 +43,4 @@ function seeAllTransactions(){
     </div>
     `;
 }
+//for(let j =  model.loggedInUser[0].innskudd.length; j > 0; j--)

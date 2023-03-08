@@ -62,7 +62,7 @@ const model = {
         innskudd: [
             {name: 'overføring', sum: 500,  date: '19.12.2022'},
             {name: 'overføring', sum: 200, date: '21.12.2022'},
-            {name: 'lønning', sum: 22500, date: '24.12.2022'},
+            {name: 'lønning', sum: 22500, date: '24.11.2022'},
             {name: 'lønning', sum: 22500, date: '24.12.2022'},
         ],
     },
