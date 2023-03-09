@@ -134,27 +134,31 @@ function getUttak(){
         <h3 class="uttakTittle">Ingen registrerte uttak enda</h3>
         `;
     }else if(model.loggedInUser[0].uttak.length > 4){
+        let n1 = model.loggedInUser[0].uttak.length - 1;
+        let n2 = n1 - 1;
+        let n3 = n2 - 1;
+        let n4 = n2 - 1;
         model.uttakSite += /*HTML*/`
         <div class="uttakGrid">
-            <div class="uttakName">${model.loggedInUser[0].uttak[0].name}</div>
-            <div class="uttakSum">${model.loggedInUser[0].uttak[0].sum}</div>
-            <div class="uttakDate">${model.loggedInUser[0].uttak[0].date}</div>
+            <div class="uttakName">${model.loggedInUser[0].uttak[n1].name}</div>
+            <div class="uttakSum">${model.loggedInUser[0].uttak[n1].sum}</div>
+            <div class="uttakDate">${model.loggedInUser[0].uttak[n1].date}</div>
         </div><div class="uttakGrid">    
-            <div class="uttakName">${model.loggedInUser[0].uttak[1].name}</div>
-            <div class="uttakSum">${model.loggedInUser[0].uttak[1].sum}</div>
-            <div class="uttakDate">${model.loggedInUser[0].uttak[1].date}</div>
+            <div class="uttakName">${model.loggedInUser[0].uttak[n2].name}</div>
+            <div class="uttakSum">${model.loggedInUser[0].uttak[n2].sum}</div>
+            <div class="uttakDate">${model.loggedInUser[0].uttak[n2].date}</div>
         </div><div class="uttakGrid">    
-            <div class="uttakName">${model.loggedInUser[0].uttak[2].name}</div>
-            <div class="uttakSum">${model.loggedInUser[0].uttak[2].sum}</div>
-            <div class="uttakDate">${model.loggedInUser[0].uttak[2].date}</div>
+            <div class="uttakName">${model.loggedInUser[0].uttak[n3].name}</div>
+            <div class="uttakSum">${model.loggedInUser[0].uttak[n3].sum}</div>
+            <div class="uttakDate">${model.loggedInUser[0].uttak[n3].date}</div>
         </div><div class="uttakGrid">
-            <div class="uttakName">${model.loggedInUser[0].uttak[3].name}</div>
-            <div class="uttakSum">${model.loggedInUser[0].uttak[3].sum}</div>
-            <div class="uttakDate">${model.loggedInUser[0].uttak[3].date}</div>
+            <div class="uttakName">${model.loggedInUser[0].uttak[n4].name}</div>
+            <div class="uttakSum">${model.loggedInUser[0].uttak[n4].sum}</div>
+            <div class="uttakDate">${model.loggedInUser[0].uttak[n4].date}</div>
         </div>
             `;
     }else{
-        for(let i = 0; i < model.loggedInUser[0].uttak.length; i++){
+        for(let i =  model.loggedInUser[0].uttak.length -1; i > 0; i--){
             model.uttakSite += /*HTML*/`
             <div class="uttakGrid">
                 <div class="uttakName">${model.loggedInUser[0].uttak[i].name}</div>
@@ -179,27 +183,31 @@ function getInnskudd(){
             <h3 class="innskuddTitle">Ingen registrerte innskudd enda</h3>
             `;
     }else if(model.loggedInUser[0].innskudd.length > 4){
+        let n1 = model.loggedInUser[0].innskudd.length - 1;
+        let n2 = n1 - 1;
+        let n3 = n2 - 1;
+        let n4 = n2 - 1;
         model.innskuddSite += /*HTML*/`
         <div class="innskuddGrid">
-            <div class="innskuddkName">${model.loggedInUser[0].innskudd[0].name}</div>
-            <div class="innskuddSum">${model.loggedInUser[0].innskudd[0].sum}</div>
-            <div class="innskuddDate">${model.loggedInUser[0].innskudd[0].date}</div>
+            <div class="innskuddkName">${model.loggedInUser[0].innskudd[n1].name}</div>
+            <div class="innskuddSum">${model.loggedInUser[0].innskudd[n1].sum}</div>
+            <div class="innskuddDate">${model.loggedInUser[0].innskudd[n1].date}</div>
         </div><div class="innskuddGrid">       
-            <div class="innskuddkName">${model.loggedInUser[0].innskudd[1].name}</div>
-            <div class="innskuddSum">${model.loggedInUser[0].innskudd[1].sum}</div>
-            <div class="innskuddDate">${model.loggedInUser[0].innskudd[1].date}</div>
+            <div class="innskuddkName">${model.loggedInUser[0].innskudd[n2].name}</div>
+            <div class="innskuddSum">${model.loggedInUser[0].innskudd[n2].sum}</div>
+            <div class="innskuddDate">${model.loggedInUser[0].innskudd[n2].date}</div>
         </div><div class="innskuddGrid">    
-            <div class="innskuddkName">${model.loggedInUser[0].innskudd[2].name}</div>
-            <div class="innskuddSum">${model.loggedInUser[0].innskudd[2].sum}</div>
-            <div class="innskuddDate">${model.loggedInUser[0].innskudd[2].date}</div>
+            <div class="innskuddkName">${model.loggedInUser[0].innskudd[n3].name}</div>
+            <div class="innskuddSum">${model.loggedInUser[0].innskudd[n3].sum}</div>
+            <div class="innskuddDate">${model.loggedInUser[0].innskudd[n3].date}</div>
         </div><div class="innskuddGrid">
-            <div class="innskuddkName">${model.loggedInUser[0].innskudd[3].name}</div>
-            <div class="innskuddSum">${model.loggedInUser[0].innskudd[3].sum}</div>
-            <div class="innskuddDate">${model.loggedInUser[0].innskudd[3].date}</div>
+            <div class="innskuddkName">${model.loggedInUser[0].innskudd[n4].name}</div>
+            <div class="innskuddSum">${model.loggedInUser[0].innskudd[n4].sum}</div>
+            <div class="innskuddDate">${model.loggedInUser[0].innskudd[n4].date}</div>
         </div>
             `;
     }else{
-            for(let j = 0; j < model.loggedInUser[0].innskudd.length; j++){
+            for(let j =  model.loggedInUser[0].innskudd.length -1; j > 0; j--){
             model.innskuddSite += /*HTML*/`
             <div class="innskuddGrid">
                 <div class="innskuddkName">${model.loggedInUser[0].innskudd[j].name}</div>
@@ -260,7 +268,7 @@ function menu(){
     <div class="welcomeTitle">Velkommen</div>
     <div class="nameTag">${model.loggedInUser[0].name} ${model.loggedInUser[0].lastname}</div>
     <div class="mainViewImage">
-    <button class="logOutButton" onclick="logOut()">Logg ut</button>
+    <button class="logOutButton" onclick="reset(), logOut()">Logg ut</button>
     <img src="${model.loggedInUser[0].img}" 
         style="width: auto; 
             height: 60px; 

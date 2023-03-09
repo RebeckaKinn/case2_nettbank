@@ -3,7 +3,7 @@ function seeAllTransactions(){
     model.title = 'Alle transaksjoner';
     let uttak = '';
     let innskudd = '';
-    for(let i = 0; i < model.loggedInUser[0].uttak.length; i++){
+    for(let i =  model.loggedInUser[0].uttak.length -1; i > 0; i--){
         uttak += /*HTML*/`
         <div class="kontoGridUttak">
             <div class="uttakNameTransaction">${model.loggedInUser[0].uttak[i].name}</div>
@@ -12,7 +12,7 @@ function seeAllTransactions(){
         </div>
             `;
     }
-    for(let j = 0; j < model.loggedInUser[0].innskudd.length; j++){
+    for(let j =  model.loggedInUser[0].innskudd.length -1; j > 0; j--){
         innskudd += /*HTML*/`
         <div class="kontoGridInnskudd">
             <div class="innskuddNameTransaction">${model.loggedInUser[0].innskudd[j].name}</div>
@@ -43,4 +43,3 @@ function seeAllTransactions(){
     </div>
     `;
 }
-//for(let j =  model.loggedInUser[0].innskudd.length; j > 0; j--)

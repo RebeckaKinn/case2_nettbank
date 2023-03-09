@@ -93,4 +93,6 @@ function reset(){
     model.accountFrom = '';
     model.newProfileimg = '';
     model.newImgProofing = false;
+    model.index2 = 0;
+    model.index1 = 0;
 }

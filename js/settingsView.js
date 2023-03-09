@@ -18,23 +18,25 @@ function settings(){
         <input type="text" id="newPassword1" placeholder="nytt passord">
         <div>Gjenta passord</div>
         <input type="text" id="newPassword2" placeholder="gjenta passord"/>
-        ${model.settingsWrongPassword}
-    
+        
         <div>Endre navn på konto</div>
             <div class="dropdown2">
                 <button onclick="showKontoerDropdown()" class="dropbtn2">${model.newKontoName}</button>
                 <div id="dropdownMenu2" class="dropdown-content2">
                 ${model.dropdownKontoer}
                 </div>
-            </div>
-            <input type="text" id="newKontoNameInput" 
-            value="${model.loggedInUser[0].kontoer[model.index].name}"/>
-            
-            </div>
-            <div class="saveButtonFlex">
+                </div>
+                <input 
+                    type="text" 
+                    id="newKontoNameInput" 
+                    value="${model.loggedInUser[0].kontoer[model.index].name}"
+                    style="z-index: 100;"/>
+                
+                </div>
+                <div class="saveButtonFlex">
                 <button onclick="saveChanges()" class="saveButton">Lagre</button>
                 ${model.settingsSaved}
-            </div>
+                </div>
 
             <div class="changeProfile">
             ${model.newImgProofing
@@ -52,11 +54,13 @@ function settings(){
                 height: 200px; 
                 border-radius: 100px;"/>
                 `}
+                <div>
+                <input oninput="changeImage()"
+                    type="file" 
+                    id="imgUpload" 
+                    accepted="image/jpeg, image/png, image/jpg"/>
+                    </div>
         </div>
-        <input oninput="changeImage()"
-            type="file" 
-            id="imgUpload" 
-            accepted="image/jpeg, image/png, image/jpg"/>
     </div>
     `;
 }

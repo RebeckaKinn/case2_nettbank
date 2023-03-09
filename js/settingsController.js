@@ -41,29 +41,36 @@ function saveChanges(){
     if(model.newUserName !== '' && model.newUserLastName !==''){
         model.loggedInUser[0].name = model.newUserName;
         model.loggedInUser[0].lastname = model.newUserLastName;
+        model.settingsSaved = /*HTML*/ `
+        <h3>Endringene er lagret.</h3>
+        `;
     }
     if(oldPassword !== '' || newPassword1 !== '' || newPassword2 !== ''){
         if(oldPassword != model.loggedInUser[0].password || newPassword1 != newPassword2 || newPassword1 == '' || newPassword2 == '' || newPassword1.length > 4 || newPassword2.length > 4){
-            model.settingsWrongPassword = /*HTML*/`
-            <h3 class="settingsFlex">Noen av passordene samsvarer ikke. Prøv igjen.</h3>
+          model.settingsSaved = /*HTML*/`
+            <h3>Noen av passordene samsvarer ikke. Prøv igjen.</h3>
             `;
         }
         if(oldPassword == model.loggedInUser[0].password && newPassword1 == newPassword2 && newPassword1.length <= 4 && newPassword2.length <= 4){
             model.loggedInUser[0].password = newPassword1;
-            model.settingsWrongPassword = /*HTML*/`
-            <h3 class="settingsFlex">Passord oppdatert!</h3>
+            model.settingsSaved = /*HTML*/`
+            <h3>Passord oppdatert.</h3>
             `;
         }
     }
     model.loggedInUser[0].kontoer[model.index].name = kontoNameInput;
-    model.newKontoName = model.loggedInUser[0].kontoer[model.index].name;
-
-    model.loggedInUser[0].img = model.newProfileimg;
-
-    model.settingsSaved = /*HTML*/ `
-    <h3>Endringene er lagret.</h3>
-    `;
-    
+    if(model.newKontoName !== model.loggedInUser[0].kontoer[model.index].name){
+      model.newKontoName = model.loggedInUser[0].kontoer[model.index].name;
+      model.settingsSaved = /*HTML*/ `
+      <h3>Endringene er lagret.</h3>
+      `;
+    }
+    if(model.newProfileimg !== ''){
+      model.loggedInUser[0].img = model.newProfileimg;
+      model.settingsSaved = /*HTML*/ `
+      <h3>Endringene er lagret.</h3>
+      `;
+    } 
     settings(); 
 }
 
